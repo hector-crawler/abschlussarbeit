@@ -1,0 +1,4 @@
+pdflatex abschlussbericht.tex
+bibtex abschlussbericht.aux
+pdflatex abschlussbericht.tex
+pdflatex abschlussbericht.tex
