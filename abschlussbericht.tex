@@ -1,0 +1,104 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage{setspace}
+\usepackage{tocloft}
+
+% Seitenränder
+\geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+% Bibliographie-Kommando
+\newcommand{\bib}{\bibliographystyle{plainnat}\bibliography{bibliography}}
+
+% Kopf- und Fußzeile
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Abschlussbericht}
+\lhead{Vorname Name}
+\rfoot{\thepage}
+
+% Abschnittsabstand
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	
+	% Titelseite
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.4\textwidth]{logo.png} \\[1cm] % Logo
+		\textbf{\LARGE{Kooperationspartner: Name des Kooperationspartners}} \\[2cm]
+		{\Large \textbf{Thema der Arbeit}} \\[2cm]
+		
+		\vfill
+		\textbf{Vorname Nachname} \\
+		Straße Hausnummer \\
+		PLZ Ort \\
+		\vfill
+		
+		\textbf{Abschlussbericht der Kooperationsphase 2024/25} \\
+		Durchgeführt am Institut … \\
+		Betreuer: … \\
+		\vfill
+		
+		\today
+	\end{titlepage}
+	
+	% Inhaltsverzeichnis
+	\tableofcontents
+	\newpage
+	
+	\section*{Abstract}
+	\addcontentsline{toc}{section}{Abstract}
+	Kurze Zusammenfassung (in Englisch). \\
+	
+	\section{Einleitung}
+	Kurze Einführung in die Aufgabenstellung.
+	
+	\subsection{Bibliographie Test}
+	
+	Die Qualität von Quellcode ist ein zentrales Thema in der Softwareentwicklung. Meyer beschreibt in seinem Buch klare Prinzipien für sauberen Code \cite{meyer2008clean}. 
+	
+	Das HTTP-Protokoll und seine Bedeutung für Webanwendungen ist in den entsprechenden RFCs dokumentiert \cite{rfc7231}.
+	
+	Ein modernes JavaScript-Framework, das diese Prinzipien unterstützt, ist Vue.js, dessen Entwicklung offen auf GitHub verfolgt werden kann \cite{github_vue}.
+	
+	\section{Material und Methoden}
+	Welche Materialien und Methoden wurden eingesetzt? Ggf. auch Vorversuche.
+	
+	\section{Ergebnisse}
+	Darstellung der gewonnenen Daten, ggf. mit statistischer Auswertung.
+	
+	\section{Diskussion}
+	Diskussion möglicher Fehlerquellen, Interpretation der Ergebnisse, Ausblick.
+	
+	\section{Fehlerdiskussion, Zusammenfassung und Ausblick}
+	Zusätzliche Reflexion, offene Fragen und mögliche weitere Untersuchungen.
+	
+	\section*{Danksagung}
+	\addcontentsline{toc}{section}{Danksagung}
+	Dank an Betreuer, Förderer etc.
+	
+	\section*{Quellen}
+	\addcontentsline{toc}{section}{Quellen}
+	\bib
+	
+	\appendix
+	\section{Anhang}
+	Weitere Bilder, Daten, Abkürzungen usw.
+	
+	\section*{Selbstständigkeitserklärung}
+	\addcontentsline{toc}{section}{Selbstständigkeitserklärung}
+	Hiermit versichere ich, dass ich diese Arbeit unter der Beratung durch … selbstständig verfasst habe und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt wurden, sowie Zitate kenntlich gemacht habe. \\[2cm]
+	
+	Ort, Datum \hfill \rule{5cm}{0.4pt} \\
+	\hfill (Unterschrift)
+	
+\end{document}
