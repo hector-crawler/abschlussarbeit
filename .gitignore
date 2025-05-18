@@ -2,6 +2,8 @@ abschlussbericht.aux
 abschlussbericht.bbl
 abschlussbericht.bcf
 abschlussbericht.blg
+abschlussbericht.fdb_latexmk
+abschlussbericht.fls
 abschlussbericht.log
 abschlussbericht.out
 abschlussbericht.pdf
@@ -9,6 +11,5 @@ abschlussbericht.run.xml
 abschlussbericht.synctex.gz
 abschlussbericht.toc
 abschlussbericht.xdy
-
+texput.log
 sections/*.aux
-exclude.py
