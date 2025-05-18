@@ -10,6 +10,7 @@
 \usepackage[numbers]{natbib}
 \usepackage{setspace}
 \usepackage{tocloft}
+% \usepackage{svg}
 
 % Seitenränder
 \geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
@@ -21,7 +22,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Abschlussbericht}
-\lhead{Vorname Name}
+% \lhead{Vorname Name}
 \rfoot{\thepage}
 
 % Abschnittsabstand
@@ -32,20 +33,46 @@
 	
 	% Titelseite
 	\begin{titlepage}
+		\begin{minipage}[c]{0.49\textwidth}
+			\raggedright
+			\includegraphics[width=0.4\textwidth]{TH_Mannheim_Logo_RGB_blau.png}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[c]{0.49\textwidth}
+			\raggedleft
+			\includegraphics[width=0.4\textwidth]{logo.png}
+		\end{minipage}
+		\\[1cm]
 		\centering
-		\includegraphics[width=0.4\textwidth]{logo.png} \\[1cm] % Logo
-		\textbf{\LARGE{Kooperationspartner: Name des Kooperationspartners}} \\[2cm]
-		{\Large \textbf{Thema der Arbeit}} \\[2cm]
+		\textbf{\LARGE{Entwurf, Entwicklung und Realisierung eines einarmigen Krabbelroboters zur Integration und Erprobung von KI-Algorithmen}} \\[2cm]
+		% {\Large \textbf{Thema der Arbeit}} \\[2cm]
 		
 		\vfill
-		\textbf{Vorname Nachname} \\
-		Straße Hausnummer \\
-		PLZ Ort \\
+			\begin{minipage}[t]{0.32\textwidth}
+			    \raggedright
+			    \textbf{Gregor Niehl} \\
+			    Weinbrennerstraße 7 \\
+			    68723 Mannheim \\
+			\end{minipage}
+			\hfill
+			\begin{minipage}[t]{0.32\textwidth}
+			    \centering
+			    \textbf{Jonathan Kraus} \\
+			    Meersburger Straße 84 \\
+			    68239 Mannheim \\
+			\end{minipage}
+			\hfill
+			\begin{minipage}[t]{0.32\textwidth}
+			    \raggedleft
+			    \textbf{Pascal Roth} \\
+			    August-Bebel-Straße 79\\
+			    68199 Mannheim \\
+			\end{minipage}
 		\vfill
 		
 		\textbf{Abschlussbericht der Kooperationsphase 2024/25} \\
-		Durchgeführt am Institut … \\
-		Betreuer: … \\
+		Durchgeführt an der Hochschule Mannheim \\
+		Betreuer: Prof. Dr. Thomas Ihme \\
 		\vfill
 		
 		\today
@@ -76,10 +103,10 @@
 	\section{Ergebnisse}
 	Darstellung der gewonnenen Daten, ggf. mit statistischer Auswertung.
 	
-	\section{Diskussion}
-	Diskussion möglicher Fehlerquellen, Interpretation der Ergebnisse, Ausblick.
+	%\section{Diskussion}
+	%Diskussion möglicher Fehlerquellen, Interpretation der Ergebnisse, Ausblick.
 	
-	\section{Fehlerdiskussion, Zusammenfassung und Ausblick}
+	\section{(Fehler-)diskussion, Zusammenfassung und Ausblick}
 	Zusätzliche Reflexion, offene Fragen und mögliche weitere Untersuchungen.
 	
 	\section*{Danksagung}
