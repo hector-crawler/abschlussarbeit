@@ -9,3 +9,6 @@ abschlussbericht.run.xml
 abschlussbericht.synctex.gz
 abschlussbericht.toc
 abschlussbericht.xdy
+
+sections/*.aux
+exclude.py
