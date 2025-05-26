@@ -35,6 +35,11 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: abschlussbericht.tex
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: abschlussbericht.pdf
+          path: abschlussbericht.pdf
       - name: Move PDF
         run: mv abschlussbericht.pdf .github/page/abschlussbericht.pdf
           
