@@ -13,3 +13,4 @@ abschlussbericht.toc
 abschlussbericht.xdy
 texput.log
 sections/*.aux
+exclude.py
