@@ -10,9 +10,16 @@ Das Robot Operating System (ROS)\cite{ros} ist ein quelloffenes Softwareframewor
 
 Im Vergleich zur Legacy-Codebase haben wir das Projekt von ROS 1 zu ROS 2 portiert. ROS 2 ist zum Zeitpunkt der Arbeit die neueste Major-Version von ROS und unterstützt modernere Versionen des Ubuntu-Betriebssystems. Dadurch konnten wir das Betriebssystem auf dem Raspberry Pi von Ubuntu 18.04 auf Ubuntu 24.04 upgraden. Support für ROS 1 endete außerdem im Mai 2025, während der Laufzeit des Projekts, und die Legacy-installation hätte keine Updates mehr erhalten.
 
+\subsubsection{pixi}
+
+pixi ist ein Tool für Softwareentwickler, das die Verwaltung von Software-Bibliotheken vereinfacht und gleichzeitig als Build-System dient. Bibliotheken und Build-Befehle werden von pixi in einer Textdatei im Projektverzeichnis gespeichert, sodass die gesamte Entwicklungsumgebung unabhängig vom Hostsystem reproduzierbar ist.
+
+Mit pixi konnten wir den mehrschrittigen Build-Prozess auf dem Roboter stark vereinfachen.
+
 \subsection{Hardware}
 
 \subsubsection{Raspberry Pi}
 
 Der Prozessor des Crawlers ist ein Raspberry Pi 4 Model B, der gleiche Single Board Computer (SBC) wie beim Vorgängerprojekt.
+
 Zu Anfang unseres Projekts hatten wir lange Zeit Schwierigkeiten, die neuere Ubuntu-Version auf dem SBC zu installieren. Nach langem Debuggen mit verschiedenen Linux-Distributionen, Netzteilen und SD-Karten kamen wir zu dem Schluss, dass das Modell des Vorgängerprojekts zu Schaden gekommen war, seit wir es übernommen hatten, möglicherweise im Transport.
