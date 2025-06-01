@@ -1,6 +1,6 @@
 \section{Material und Methoden}
 
-\subsection{Software-Architektur}
+\subsection{Software}
 
 Die Architektur der Crawler-Software, also die Strukturierung des Codes, war einer der wichtigsten Verbesserungspunkte im Vergleich zum Vorgängerprojekt (im Folgenden "Legacy-" bezeichnet). 
 
@@ -8,4 +8,11 @@ Die Architektur der Crawler-Software, also die Strukturierung des Codes, war ein
 
 Das Robot Operating System (ROS)\cite{ros} ist ein quelloffenes Softwareframework zur Entwicklung von Robotern. Es bildet eine Middleware zur Verwaltung und einzelner Softwarekomponenten, sowie deren Kommunikation untereinander. Diese Komponenten (genannt "Nodes") können jeweils in einer beliebigen Programmiersprache (hier Python) implementiert, und bei Programmstart von ROS ausgeführt werden. Die Nodes laufen in getrennten Prozessen. Kommunikation zwischen diesen Nodes geschieht über Kanäle in ROS (genannt "Topics"), auf denen Nachrichten von sog. Publisher-Nodes gesendet und von sog. Subscriber-Nodes gelesen werden können. Die Datentypen dieser Nachrichten können pro Topic festgelegt werden. Diese Datentypen können grundlegende Typen wie Zahlen oder Strings, aber auch komplexere, im Code festgelegte Datenstukturen sein.
 
-Im Vergleich zur Legacy-Codebase haben wir das Projekt von ROS 1 zu ROS 2 portiert. ROS 2 ist zum Zeitpunkt der Arbeit die neueste Major-Version von ROS und unterstützt modernere Versionen des Ubuntu-Betriebssystems. Dadurch konnten wir das Betriebssystem auf dem Raspberry Pi von Ubuntu 18.04 auf Ubuntu 24.04 upgraden. Support für ROS 1 endete außerdem im Mai 2025, während der Laufzeit des Projekts, und die Legacy-installation hätte keine Updates mehr erhalten. 
+Im Vergleich zur Legacy-Codebase haben wir das Projekt von ROS 1 zu ROS 2 portiert. ROS 2 ist zum Zeitpunkt der Arbeit die neueste Major-Version von ROS und unterstützt modernere Versionen des Ubuntu-Betriebssystems. Dadurch konnten wir das Betriebssystem auf dem Raspberry Pi von Ubuntu 18.04 auf Ubuntu 24.04 upgraden. Support für ROS 1 endete außerdem im Mai 2025, während der Laufzeit des Projekts, und die Legacy-installation hätte keine Updates mehr erhalten.
+
+\subsection{Hardware}
+
+\subsubsection{Raspberry Pi}
+
+Der Prozessor des Crawlers ist ein Raspberry Pi 4 Model B, der gleiche Single Board Computer (SBC) wie beim Vorgängerprojekt.
+Zu Anfang unseres Projekts hatten wir lange Zeit Schwierigkeiten, die neuere Ubuntu-Version auf dem SBC zu installieren. Nach langem Debuggen mit verschiedenen Linux-Distributionen, Netzteilen und SD-Karten kamen wir zu dem Schluss, dass das Modell des Vorgängerprojekts zu Schaden gekommen war, seit wir es übernommen hatten, möglicherweise im Transport.
