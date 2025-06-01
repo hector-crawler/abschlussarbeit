@@ -1,10 +1,9 @@
 \section{Material und Methoden}
 
-
 \subsection{Architektur}
 
 Die Architektur der Crawler-Software, also die Strukturierung des Codes, war einer der wichtigsten Verbesserungspunkte im Vergleich zum Vorgängerprojekt (im Folgenden "Legacy-" bezeichnet). 
 
 \subsubsection{Robot Operating System (ROS)}
 
-Das Robot Operating System (ROS, genauer hier ROS2)\cite{ros} ist ein Open"-Source"-Softwareframework zur Entwicklung von Robotern, das neben einer Vielzahl von Bibliotheken und Tools eine Middleware zur Verwaltung einzelner Softwarekomponenten sowie zu ihrer Kommunikation untereinander bereitstellt. So werden die sog. Nodes in C oder Python implementiert (hier ist aufgrund der geringeren Komplexität Python gewählt) und können von ROS gestartet werden. Da sie in getrennten Prozessen laufen, funktinoiert ihre Kommunikation untereinander asynchron über Topics, auf denen Messages gesendet werden können, welche einfache Datentypen (Zahlen, Strings) oder benutzerdefinierte Strukturen enthalten. Diese modulare Architektur ermöglicht ein hohes Maß an Flexibilität, etwa einzelne Nodes durch andere zu ersetzen, die sich ...
+Das Robot Operating System (ROS)\cite{ros} ist ein quelloffenes Softwareframework zur Entwicklung von Robotern. Es bildet eine Middleware zur Verwaltung und einzelner Softwarekomponenten, sowie deren Kommunikation untereinander. Diese Komponenten (genannt "Nodes") können jeweils in einer beliebigen Programmiersprache (hier Python) implementiert, und bei Programmstart von ROS ausgeführt werden. Die Nodes laufen in getrennten Prozessen. Kommunikation zwischen diesen Nodes geschieht über Kanäle in ROS (genannt "Topics"), auf denen Nachrichten von sog. Publisher-Nodes gesendet und von sog. Subscriber-Nodes gelesen werden können. Die Datentypen dieser Nachrichten können pro Topic festgelegt werden. Diese Datentypen können grundlegende Typen wie Zahlen oder Strings, aber auch komplexere, im Code festgelegte Datenstukturen sein.
