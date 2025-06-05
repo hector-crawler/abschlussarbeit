@@ -14,7 +14,17 @@ Im Vergleich zur Legacy-Codebase haben wir das Projekt von ROS 1 zu ROS 2 portie
 
 pixi ist ein Tool für Softwareentwickler, das die Verwaltung von Software-Bibliotheken vereinfacht und gleichzeitig als Build-System dient. Bibliotheken und Build-Befehle werden von pixi in einer Textdatei im Projektverzeichnis gespeichert, sodass die gesamte Entwicklungsumgebung unabhängig vom Hostsystem reproduzierbar ist.
 
-Mit pixi konnten wir den mehrschrittigen Build-Prozess auf dem Roboter stark vereinfachen.
+Um das Programm auf dem Roboter auszuführen, sind mehrere Schritte notwendig:
+\begin{itemize}
+	\item Der gesamte Quellcode muss auf den Raspberry Pi synchronisiert werden.
+	\item Die Web-Komponente wird mithilfe von npm, einem Build-Tool für JavaScript, zu einer statischen HTML-Datei gebaut.
+	\item Diese HTML-Datei und der Rest des Programms werden mithilfe von ROS zu einem ausführbaren Programm gebündelt.
+	\item Dieses Programm wird mit einem ROS-Befehl gestartet.
+\end{itemize}
+
+Da der Build-Prozess der Web-Komponente auf dem Raspberry Pi ziemlich lange dauert, kann die Web-Komponente auch zuerst lokal auf dem eigenen Rechner gebaut werden, damit die resultierende HTML-Datei direkt auf den Pi synchronisiert werden kann.
+
+Mit pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark vereinfachen. Die einzelnen Schritte sind in Pixi-Befehlen wie \texttt{pixi run upload} oder \texttt{pixi run build-web} definiert, was die Arbeit mit der Codebase wesentlich erleichtert. Im Vergleich zum Vorgängerprojekt ist es außerdem nun leichter, den Build-Prozess zu dokumentieren und zu überliefern. Die Befehle zum Starten des Legacy-Programms mussten uns bei der Projektübergabe noch mündlich mitgeteilt werden, da sie in der Legacy-Codebase nicht festgehalten waren.
 
 \subsection{Hardware}
 
