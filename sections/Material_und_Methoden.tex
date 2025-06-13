@@ -1,5 +1,12 @@
 \section{Material und Methoden}
 
+\subsection{Mechanischer Aufbau und Konstruktionsprinzipien}
+
+\subsubsection{Analyse des Ausgangsmodells}
+\subsubsection{CAD-gestütztes Design und 3D-Druck}
+\subsubsection{Gestaltungsschwerpunkte}
+\subsubsection{Mechanischer Aufbau und Testanpassungen}
+
 \subsection{Software}
 
 Die Architektur der Crawler-Software, also die Strukturierung des Codes, war einer der wichtigsten Verbesserungspunkte im Vergleich zum Vorgängerprojekt (im Folgenden mit ``Legacy-'' bezeichnet). 
@@ -28,8 +35,35 @@ Mit pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark 
 
 \subsection{Hardware}
 
-\subsubsection{Raspberry Pi}
+\subsubsection{Auswahl der Hauptkomponenten}
+
+\textbf{Der Microcontroller}
 
 Der Prozessor des Crawlers ist ein Raspberry Pi 4 Model B, der gleiche Single Board Computer (SBC) wie beim Vorgängerprojekt.
 
 Zu Anfang unseres Projekts hatten wir lange Zeit Schwierigkeiten, die neuere Ubuntu-Version auf dem SBC zu installieren. Nach langem Debuggen mit verschiedenen Linux-Distributionen, Netzteilen und SD-Karten kamen wir zu dem Schluss, dass das Modell des Vorgängerprojekts zu Schaden gekommen war, seit wir es übernommen hatten, möglicherweise im Transport.
+
+\textbf{Die Sensoren}
+
+Zur Messung von Drehzahlunterschieden an den Rädern des Krabbelroboters werden zwei Inkrementalgeber eingesetzt. Die Inkrementalgeber des Legacy-Projekt, das Modell \textit{MEC22} der Firma PWB \cite{pwb_me16_datasheet_2011}, werden weiterverwendet. Die Sensoren ermöglichen eine zuverlässige Erfassung von Bewegungen und sind dabei kosteneffizient.
+
+Die gewählte Ausführung bietet eine Auflösung von 500 Zählimpulsen pro Umdrehung (Counts per Revolution, CPR). Damit lässt sich selbst eine sehr feine Wegauflösung realisieren. Bei einem Raddurchmesser von 5\,cm entspricht ein Impuls etwa 0{,}31\,mm Bewegung – ausreichend, um auch kleinste Bewegungen des Roboters zu erfassen.
+
+Die Versorgung erfolgt direkt über den Raspberry Pi, der die notwendige Betriebsspannung zur Verfügung stellt. Die elektrische Verbindung wird über einen 5-poligen Molex-Stecker realisiert.
+
+\textbf{Die Aktoren}
+
+Für die Bewegung des Arms wurden wie im ursprünglichen Projekt Servomotoren des Typs \textit{Dynamixel XL430-W250-T} von Robotis \cite{robotis_xl430} eingesetzt. Die Wiederverwendung dieser Motoren ermöglichte eine einfache Integration in das bestehende System und reduzierte den Entwicklungsaufwand. 
+
+Die Motoren verfügen über ein gutes Verhältnis von Drehmoment (bis zu 1{,}5\,Nm) zu Energieverbrauch und erlauben eine präzise Positionssteuerung. Jeder Motor kann über eine eindeutige ID adressiert werden, was eine Kommunikation über ein gemeinsames Bus-System erlaubt. Zur Datenübertragung wird das TTL-Protokoll verwendet.
+
+Für die Verbindung zwischen den Motoren und dem Steuerrechner kommt der \textit{U2D2-Connector} von Robotis \cite{robotis_u2d2} zum Einsatz. Dieser unterstützt sowohl TTL- als auch RS-485-Verbindungen und ermöglicht die Kommunikation über USB mit dem Steuergerät. Zur stabilen Energieversorgung dient ein \textit{U2D2 Power Hub} \cite{robotis_u2d2_power_hub}, der mehrere Motoren gleichzeitig mit Spannung versorgen kann.
+
+
+\subsubsection{Spannungsversorgung}
+% \subsubsection{Integration und Inbetriebnahme der Hardware}
+
+\subsection{Methodisches Vorgehen}
+
+\subsubsection{Iterative Entwicklung und Arbeitsteilung}
+\subsubsection{Dokumnetation und Versionskontrolle}
