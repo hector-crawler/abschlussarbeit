@@ -51,6 +51,15 @@ Die gewählte Ausführung bietet eine Auflösung von 500 Zählimpulsen pro Umdre
 
 Die Versorgung erfolgt direkt über den Raspberry Pi, der die notwendige Betriebsspannung zur Verfügung stellt. Die elektrische Verbindung wird über einen 5-poligen Molex-Stecker realisiert.
 
+\textbf{Die Aktoren}
+
+Für die Bewegung des Arms wurden wie im ursprünglichen Projekt Servomotoren des Typs \textit{Dynamixel XL430-W250-T} von Robotis \cite{robotis_xl430} eingesetzt. Die Wiederverwendung dieser Motoren ermöglichte eine einfache Integration in das bestehende System und reduzierte den Entwicklungsaufwand. 
+
+Die Motoren verfügen über ein gutes Verhältnis von Drehmoment (bis zu 1{,}5\,Nm) zu Energieverbrauch und erlauben eine präzise Positionssteuerung. Jeder Motor kann über eine eindeutige ID adressiert werden, was eine Kommunikation über ein gemeinsames Bus-System erlaubt. Zur Datenübertragung wird das TTL-Protokoll verwendet.
+
+Für die Verbindung zwischen den Motoren und dem Steuerrechner kommt der \textit{U2D2-Connector} von Robotis \cite{robotis_u2d2} zum Einsatz. Dieser unterstützt sowohl TTL- als auch RS-485-Verbindungen und ermöglicht die Kommunikation über USB mit dem Steuergerät. Zur stabilen Energieversorgung dient ein \textit{U2D2 Power Hub} \cite{robotis_u2d2_power_hub}, der mehrere Motoren gleichzeitig mit Spannung versorgen kann.
+
+
 \subsubsection{Spannungsversorgung}
 % \subsubsection{Integration und Inbetriebnahme der Hardware}
 
