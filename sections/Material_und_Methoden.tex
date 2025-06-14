@@ -4,7 +4,45 @@
 
 \subsubsection{Analyse des Ausgangsmodells}
 \subsubsection{CAD-gestütztes Design und 3D-Druck}
+
+Die Bauteile und das Gehäuse des Roboters wurden mithilfe eines CAD-gestützten Entwicklungsprozesses mit \textit{Autodesk Fusion 360} erstellt. Die digitale Modellierung ermöglichte eine präzise Gestaltung der Bauteile, die direkt überprüft werden konnten. Für den Austausch und die Weiterverarbeitung (insbesondere mit Herrn Prof. Dr. Ihme) wurden die Modelle als standardisierte STEP-Dateien exportiert.
+
+Der anschließende 3D-Druck der Komponenten erlaubte eine schnelle und kostengünstige Fertigung. Durch das additive Herstellungsverfahren wurde nur das tatsächlich benötigte Material eingesetzt, was sowohl Gewicht als auch Ressourcen sparte. Besonders vorteilhaft am Prozess ist zudem, dass keine komplexen Werkzeuge oder Maschinen notwendig sind – Anpassungen ließen sich direkt am Computer vornehmen und unkompliziert umsetzen.
+
+Der kombinierte CAD- und 3D-Druckprozess unterstützt somit eine iterative und flexible Entwicklung, wie sie im Prototypenbau von mobilen Robotern besonders hilfreich ist.
+
 \subsubsection{Gestaltungsschwerpunkte}
+
+Ziel der Weiterentwicklung des übernommenen einarmigen Krabbelroboters war es, ein modular aufgebautes, leichtes und anschaulich gestaltetes System zu schaffen, das sowohl für Demonstrations- als auch Auswertungszwecke geeignet ist. Dabei wurden folgende Anforderungen von uns anfangs festgelegt:
+
+\textbf{Must-Have}
+\begin{itemize}
+  \item \textbf{Modularität (Basic):} Zentrale Komponenten, insbesondere der Akku, müssen einfach austauschbar und erweiterbar sein, z.\,B. durch Steck- oder Schraubverbindungen.
+  \item \textbf{Offenes Design:} Für Demonstrationszwecke müssen alle Komponenten sichtbar und gut zugänglich montiert sein, um einen schnellen Überblick über das System zu ermöglichen.
+  \item \textbf{Zentraler, tiefer Schwerpunkt:} Zur Erhöhung der Stabilität und besseren Kraftübertragung beim Antrieb muss ein möglichst zentraler und tiefer Schwerpunkt angestrebt.
+  \item \textbf{Leichtbauweise:} Ein geringes Gewicht unterstützt die Energieeffizienz und erleichtert die Steuerung durch kleinere Antriebsmotoren.
+  \item \textbf{Mechanische Kompatibilität:} Es muss auf die Verwendung standardisierter Bauteile (z.\,B. M3/M4-Schrauben) geachtet werden, um einfache (De-)Montage und Erweiterbarkeit sicherzustellen.
+\end{itemize}
+
+\textbf{Nice-to-Have}
+\begin{itemize}
+  \item \textbf{Kabelmanagement:} Ordnung und Übersicht im Innenraum durch Führungen oder Halteclips.
+%   \item \textbf{Modulare Softwarearchitektur:} Vorzugsweise basierend auf ROS, um flexible Steuerung und Erweiterbarkeit zu ermöglichen.
+  \item \textbf{Klicksysteme:} Gehäuseteile, die ohne Werkzeug geöffnet oder getauscht werden können.
+%   \item \textbf{Vibrationsdämpfung:} Mechanische Entkopplung der Motoren zur Reduktion von Geräuschen und Verschleiß.
+  \item \textbf{Kühlung und Luftzirkulation:} Ein passives oder aktives Kühlsystem angestrebt (Besonders für den Raspberry Pi).
+\end{itemize}
+
+\textbf{Optional}
+\begin{itemize}
+  \item \textbf{Autonomiefunktionen:} Z.\,B. selbstständige Navigation zur Erweiterung des Funktionsumfangs.
+  \item \textbf{Erweiterte Sensorik:} Zusätzliche Sensoren wie LiDAR als langfristige Option.
+  \item \textbf{Symmetrisches Design:} Eine symmetrische Gestaltung kann die Bewegungsvorhersagbarkeit erhöhen und die Konstruktion vereinfachen.
+  \item \textbf{Diagnoseelemente:} LEDs oder Displays zur Anzeige von Systemzuständen (Spannung, Kommunikation, Fehler) neben der bestehenden, digitalen (Fehler-)Meldungen.
+\end{itemize}
+
+Diese Zielkriterien bildeten die Grundlage für die Auswahl der Bauteile (bzw. des Akkus) und das mechanische Design des weiterentwickelten Roboters.
+
 \subsubsection{Mechanischer Aufbau und Testanpassungen}
 
 \subsection{Software}
@@ -61,6 +99,17 @@ Für die Verbindung zwischen den Motoren und dem Steuerrechner kommt der \textit
 
 
 \subsubsection{Spannungsversorgung}
+
+Da der alte Akku, ein \textit{XCell LiPo Cracker CAR} \cite{xcell_akku} mit zwei Zellen, $7,4V$ und $5400mAh$, durch sein hohes Gewicht von $310g$ ca. $25\%$ des Gesamtgewichts des Roboters ausmachte, wurde ein leichterer Akku gesucht.
+
+Der neu ausgewählte \textit{Gens ace Modellbau-Akkupack (LiPo)} \cite{gens_ace_akku} ist mit seinen ebenfalls $7,4V$ Ausgangsspannung ähnlich aufgebaut, wiegt allerdings nur noch $66g$ und ist deutlich kompakter. Aufgrund des geplanten Einsatz als Demonstrationsroboters ist auch die damit verbundenen geringere Laufzeit kein Problem. 
+
+$t_{\text{Versorgung, alt}} = \frac{5400\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 5\,\mathrm{h} \newline
+\newline
+t_{\text{Versorgung, neu}} = \frac{1500\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 1{,}4\,\mathrm{h}$
+
+1070mAh sind dabei der maximal gemessene Strom (bei der Bewegung der Motoren) und nicht der Normalzustand.
+
 % \subsubsection{Integration und Inbetriebnahme der Hardware}
 
 \subsection{Methodisches Vorgehen}
