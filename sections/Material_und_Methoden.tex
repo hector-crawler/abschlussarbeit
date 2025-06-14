@@ -99,6 +99,17 @@ Für die Verbindung zwischen den Motoren und dem Steuerrechner kommt der \textit
 
 
 \subsubsection{Spannungsversorgung}
+
+Da der alte Akku, ein \textit{XCell LiPo Cracker CAR} \cite{xcell_akku} mit zwei Zellen, $7,4V$ und $5400mAh$, durch sein hohes Gewicht von $310g$ ca. $25\%$ des Gesamtgewichts des Roboters ausmachte, wurde ein leichterer Akku gesucht.
+
+Der neu ausgewählte \textit{Gens ace Modellbau-Akkupack (LiPo)} \cite{gens_ace_akku} ist mit seinen ebenfalls $7,4V$ Ausgangsspannung ähnlich aufgebaut, wiegt allerdings nur noch $66g$ und ist deutlich kompakter. Aufgrund des geplanten Einsatz als Demonstrationsroboters ist auch die damit verbundenen geringere Laufzeit kein Problem. 
+
+$t_{\text{Versorgung, alt}} = \frac{5400\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 5\,\mathrm{h} \newline
+\newline
+t_{\text{Versorgung, neu}} = \frac{1500\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 1{,}4\,\mathrm{h}$
+
+1070mAh sind dabei der maximal gemessene Strom (bei der Bewegung der Motoren) und nicht der Normalzustand.
+
 % \subsubsection{Integration und Inbetriebnahme der Hardware}
 
 \subsection{Methodisches Vorgehen}
