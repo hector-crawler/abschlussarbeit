@@ -3,6 +3,17 @@
 \subsection{Mechanischer Aufbau und Konstruktionsprinzipien}
 
 \subsubsection{Analyse des Ausgangsmodells}
+
+Zu Beginn des Projekts wurde der einarmige Krabbelroboter des Vorgängerprojekts in Bezug auf Software und Hardware analysiert. Dazu haben wir uns besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}. 
+
+Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinande verbunden. Die Gelenke wurden durch Dynamixel Motoren dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
+Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibene unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
+\begin{align}
+  n = m \cdot (N - 1 - J) + \sum_{i=1}^{J}f_i \noindent \\
+  n = 6 \cdot (3 - 1 - 2) + \sum_{i=1}^{2}1 = 6 \cdot 0 + 2 = 2
+\end{align}
+Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starkörpers (m = 6 im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
+
 \subsubsection{CAD-gestütztes Design und 3D-Druck}
 
 Die Bauteile und das Gehäuse des Roboters wurden mithilfe eines CAD-gestützten Entwicklungsprozesses mit \textit{Autodesk Fusion 360} erstellt. Die digitale Modellierung ermöglichte eine präzise Gestaltung der Bauteile, die direkt überprüft werden konnten. Für den Austausch und die Weiterverarbeitung (insbesondere mit Herrn Prof. Dr. Ihme) wurden die Modelle als standardisierte STEP-Dateien exportiert.
