@@ -4,7 +4,9 @@
 
 \subsubsection{Analyse des Ausgangsmodells}
 
-Zu Beginn des Projekts wurde der einarmige Krabbelroboter des Vorgängerprojekts in Bezug auf Software und Hardware analysiert. Dazu haben wir uns besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}. 
+Zu Beginn des Projekts wurde der einarmige Krabbelroboter des Vorgängerprojekts in Bezug auf Software, Hardware und Funktionsumfang analysiert. Dazu haben wir uns besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}. 
+
+\textbf{Mechanische Analyse}
 
 Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinande verbunden. Die Gelenke wurden durch Dynamixel Motoren dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
 Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibene unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
@@ -21,6 +23,15 @@ Des Weiteren wurde die Form des Konfigurationsraum des Roboters untersucht. Der 
   \caption{Der Konfigurationsraum des Krabbelroboters als Torus, aus \glqq Grundlagen der Robotik\grqq \ \cite{robotik_scriptum}.}
   \label{fig:torus}
 \end{figure}
+
+Das Robotersystem entspricht also einem (autonomen) mobilen Roboter mit 2 DoF und einem planaren 2R-Roboterarm. Daraus ließe sich eine Kinematische Modellierung bzw. Simulation ableiten, die allerdings nicht im Rahmen dieser Abschlussarbeit angefertigt wurde. 
+
+\textbf{Funktionsumfang}
+Der Funktionsumfang des Roboters beschränkte sich auf die Steuerung der Motoren, um den Arm bzw. die Hand über eine graphische Benutzeroberfläche (GUI) zu bewegen.
+
+\textbf{Software-Analyse}
+
+
 
 \subsubsection{CAD-gestütztes Design und 3D-Druck}
 
