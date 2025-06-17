@@ -14,6 +14,14 @@ Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel
 \end{align}
 Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starkörpers (m = 6 im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
 
+Des Weiteren wurde die Form des Konfigurationsraum des Roboters untersucht. Der Konfigurationsraum beschreibt alle möglichen Positionen und Orientierungen des Roboters im Raum. Mit der Form ist seine topologische Struktur gemeint, sprich wie die möglichen Konfigurationen (alle Konfigurationen zusammen ergeben den Konfigurationsraum) zusammenhängen. Da der Krabbel-Roboter zwei zyklische Rotationsgelenke hat, ergibt sich die Form eines zweidimensionalen Torus $(T^2 = S^1 \times S^1)$, wobei $S^1$ die Menge aller Punkte auf einem Kreis darstellt \cite{robotik_scriptum}. Abbildung \ref{fig:torus} zeigt dies visuell.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{torus.png}
+  \caption{Der Konfigurationsraum des Krabbelroboters als Torus, aus \glqq Grundlagen der Robotik\grqq \ \cite{robotik_scriptum}.}
+  \label{fig:torus}
+\end{figure}
+
 \subsubsection{CAD-gestütztes Design und 3D-Druck}
 
 Die Bauteile und das Gehäuse des Roboters wurden mithilfe eines CAD-gestützten Entwicklungsprozesses mit \textit{Autodesk Fusion 360} erstellt. Die digitale Modellierung ermöglichte eine präzise Gestaltung der Bauteile, die direkt überprüft werden konnten. Für den Austausch und die Weiterverarbeitung (insbesondere mit Herrn Prof. Dr. Ihme) wurden die Modelle als standardisierte STEP-Dateien exportiert.
