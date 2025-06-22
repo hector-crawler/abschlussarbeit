@@ -3,8 +3,76 @@
 \subsection{Mechanischer Aufbau und Konstruktionsprinzipien}
 
 \subsubsection{Analyse des Ausgangsmodells}
+
+Zu Beginn des Projekts wurde der einarmige Krabbelroboter des Vorgängerprojekts in Bezug auf Software, Hardware und Funktionsumfang analysiert. Dazu haben wir uns besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}. 
+
+\textbf{Mechanische Analyse}
+
+Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinande verbunden. Die Gelenke wurden durch Dynamixel Motoren dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
+
+Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibene unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
+\begin{align}
+  n = m \cdot (N - 1 - J) + \sum_{i=1}^{J}f_i \noindent \\
+  n = 6 \cdot (3 - 1 - 2) + \sum_{i=1}^{2}1 = 6 \cdot 0 + 2 = 2
+\end{align}
+Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starkörpers (m = 6 im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
+
+Des Weiteren wurde die Form des Konfigurationsraum des Roboters untersucht. Der Konfigurationsraum beschreibt alle möglichen Positionen und Orientierungen des Roboters im Raum. Mit der Form ist seine topologische Struktur gemeint, sprich wie die möglichen Konfigurationen (alle Konfigurationen zusammen ergeben den Konfigurationsraum) zusammenhängen. Da der Krabbel-Roboter zwei zyklische Rotationsgelenke hat, ergibt sich die Form eines zweidimensionalen Torus $(T^2 = S^1 \times S^1)$, wobei $S^1$ die Menge aller Punkte auf einem Kreis darstellt \cite{robotik_scriptum}. Abbildung \ref{fig:torus} zeigt dies visuell.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{torus.png}
+  \caption{Der Konfigurationsraum des Krabbelroboters als Torus, aus \glqq Grundlagen der Robotik\grqq \ \cite{robotik_scriptum}.}
+  \label{fig:torus}
+\end{figure}
+
+Das Robotersystem entspricht also einem (autonomen) mobilen Roboter mit 2 DoF und einem planaren 2R-Roboterarm. Daraus ließe sich eine Kinematische Modellierung bzw. Simulation erstellen, die allerdings nicht im Rahmen dieser Abschlussarbeit angefertigt wurde. 
+
+\textbf{Funktionsumfang}
+
+Der Funktionsumfang des Roboters beschränkte sich auf die Steuerung der Motoren, um den Arm bzw. die Hand über eine graphische Benutzeroberfläche (GUI) zu bewegen.
+
+\textbf{Software-Analyse}
+
+
+
 \subsubsection{CAD-gestütztes Design und 3D-Druck}
+
+Die Bauteile und das Gehäuse des Roboters wurden mithilfe eines CAD-gestützten Entwicklungsprozesses mit \textit{Autodesk Fusion 360} erstellt. Die digitale Modellierung ermöglichte eine präzise Gestaltung der Bauteile, die direkt überprüft werden konnten. Für den Austausch und die Weiterverarbeitung (insbesondere mit Herrn Prof. Dr. Ihme) wurden die Modelle als standardisierte STEP-Dateien exportiert.
+
+Der anschließende 3D-Druck der Komponenten erlaubte eine schnelle und kostengünstige Fertigung. Durch das additive Herstellungsverfahren wurde nur das tatsächlich benötigte Material eingesetzt, was sowohl Gewicht als auch Ressourcen sparte. Besonders vorteilhaft am Prozess ist zudem, dass keine komplexen Werkzeuge oder Maschinen notwendig sind – Anpassungen ließen sich direkt am Computer vornehmen und unkompliziert umsetzen.
+
+Der kombinierte CAD- und 3D-Druckprozess unterstützt somit eine iterative und flexible Entwicklung, wie sie im Prototypenbau von mobilen Robotern besonders hilfreich ist.
+
 \subsubsection{Gestaltungsschwerpunkte}
+
+Ziel der Weiterentwicklung des übernommenen einarmigen Krabbelroboters war es, ein modular aufgebautes, leichtes und anschaulich gestaltetes System zu schaffen, das sowohl für Demonstrations- als auch Auswertungszwecke geeignet ist. Dabei wurden folgende Anforderungen von uns anfangs festgelegt:
+
+\textbf{Must-Have}
+\begin{itemize}
+  \item \textbf{Modularität (Basic):} Zentrale Komponenten, insbesondere der Akku, müssen einfach austauschbar und erweiterbar sein, z.\,B. durch Steck- oder Schraubverbindungen.
+  \item \textbf{Offenes Design:} Für Demonstrationszwecke müssen alle Komponenten sichtbar und gut zugänglich montiert sein, um einen schnellen Überblick über das System zu ermöglichen.
+  \item \textbf{Zentraler, tiefer Schwerpunkt:} Zur Erhöhung der Stabilität und besseren Kraftübertragung beim Antrieb muss ein möglichst zentraler und tiefer Schwerpunkt angestrebt.
+  \item \textbf{Leichtbauweise:} Ein geringes Gewicht unterstützt die Energieeffizienz und erleichtert die Steuerung durch kleinere Antriebsmotoren.
+  \item \textbf{Mechanische Kompatibilität:} Es muss auf die Verwendung standardisierter Bauteile (z.\,B. M3/M4-Schrauben) geachtet werden, um einfache (De-)Montage und Erweiterbarkeit sicherzustellen.
+\end{itemize}
+
+\textbf{Nice-to-Have}
+\begin{itemize}
+  \item \textbf{Kabelmanagement:} Ordnung und Übersicht im Innenraum durch Führungen oder Halteclips.
+  \item \textbf{Klicksysteme:} Gehäuseteile, die ohne Werkzeug geöffnet oder getauscht werden können.
+  \item \textbf{Kühlung und Luftzirkulation:} Ein passives oder aktives Kühlsystem angestrebt (Besonders für den Raspberry Pi).
+\end{itemize}
+
+\textbf{Optional}
+\begin{itemize}
+  \item \textbf{Autonomiefunktionen:} Z.\,B. selbstständige Navigation zur Erweiterung des Funktionsumfangs.
+  \item \textbf{Erweiterte Sensorik:} Zusätzliche Sensoren wie LiDAR als langfristige Option.
+  \item \textbf{Symmetrisches Design:} Eine symmetrische Gestaltung kann die Bewegungsvorhersagbarkeit erhöhen und die Konstruktion vereinfachen.
+  \item \textbf{Diagnoseelemente:} LEDs oder Displays zur Anzeige von Systemzuständen (Spannung, Kommunikation, Fehler) neben der bestehenden, digitalen (Fehler-)Meldungen.
+\end{itemize}
+
+Diese Zielkriterien bildeten die Grundlage für die Auswahl der Bauteile (bzw. des Akkus) und das mechanische Design des weiterentwickelten Roboters.
+
 \subsubsection{Mechanischer Aufbau und Testanpassungen}
 
 \subsection{Software}
@@ -61,9 +129,29 @@ Für die Verbindung zwischen den Motoren und dem Steuerrechner kommt der \textit
 
 
 \subsubsection{Spannungsversorgung}
+
+Da der alte Akku, ein \textit{XCell LiPo Cracker CAR} \cite{xcell_akku} mit zwei Zellen, $7,4V$ und $5400mAh$, durch sein hohes Gewicht von $310g$ ca. $25\%$ des Gesamtgewichts des Roboters ausmachte, wurde ein leichterer Akku gesucht.
+
+Der neu ausgewählte \textit{Gens ace Modellbau-Akkupack (LiPo)} \cite{gens_ace_akku} ist mit seinen ebenfalls $7,4V$ Ausgangsspannung ähnlich aufgebaut, wiegt allerdings nur noch $66g$ und ist deutlich kompakter. Aufgrund des geplanten Einsatz als Demonstrationsroboters ist auch die damit verbundenen geringere Laufzeit kein Problem. 
+
+$t_{\text{Versorgung, alt}} = \frac{5400\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 5\,\mathrm{h} \newline
+\newline
+t_{\text{Versorgung, neu}} = \frac{1500\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 1{,}4\,\mathrm{h}$
+
+$1070mA$ sind dabei der maximal gemessene Strom (bei der Bewegung der Motoren) und nicht der Normalzustand.
+
 % \subsubsection{Integration und Inbetriebnahme der Hardware}
 
 \subsection{Methodisches Vorgehen}
 
 \subsubsection{Iterative Entwicklung und Arbeitsteilung}
-\subsubsection{Dokumnetation und Versionskontrolle}
+
+Die Entwicklung des Roboters wurde in zwei Arbeitsbereiche aufgeteilt: Hardware und Software. Durch diese Aufteilung konnten Aufgaben parallel bearbeitet werden.
+
+Die Umsetzung erfolgte schrittweise, wobei immer Integrationstests durchgeführt wurden. Rückfragen wurden entweder direkt im Team geklärt oder in den regelmäßigen Meetings mit unserem Betreuuer, Herr Prof. Dr. Ihme, gestellt. 
+
+\subsubsection{Dokumentation und Versionskontrolle}
+
+Zur Organisation der Arbeit wurde eine gemeinsame GitHub-Organisation mit mehreren Repositories eingerichtet. Darin wurden CAD-Dateien, Quellcode und Dokumentationsinhalte versioniert abgelegt. Änderungen konnten so nachvollzogen und im Team abgestimmt werden.
+
+Die Repositories dienten außerdem als zentrale Anlaufstelle für ältere Zwischenstände. Die Dokumentation einzelner Arbeitsschritte erfolgte zusätzlich intern in einem zentralen Notizen-Dokument.
