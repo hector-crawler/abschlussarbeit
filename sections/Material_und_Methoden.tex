@@ -101,6 +101,16 @@ Da der Build-Prozess der Web-Komponente auf dem Raspberry Pi ziemlich lange daue
 
 Mit pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark vereinfachen. Die einzelnen Schritte sind in Pixi-Befehlen wie \texttt{pixi run upload} oder \texttt{pixi run build-web} definiert, was die Arbeit mit der Codebase wesentlich erleichtert. Im Vergleich zum Vorgängerprojekt ist es außerdem nun leichter, den Build-Prozess zu dokumentieren und zu überliefern. Die Befehle zum Starten des Legacy-Programms mussten uns bei der Projektübergabe noch mündlich mitgeteilt werden, da sie in der Legacy-Codebase nicht festgehalten waren.
 
+\subsubsection{Der Lernprozess: Reinforcement Learning}
+
+Im Maschinellen Lernen wird, um selbstlernende Algorithmen zu trainieren, meist das Konzept des Reinforcement Learning (RL) angewendet. Das Konzept besteht in der Regel aus zwei Gegenspielern:
+\begin{itemize}
+    \item Dem Algorithmus, der (anfangs zufällig, später gezielt) Aktionen durchführt.
+    \item Einer Umgebung (dem Environment), welche die Aktionen des Algorithmus anhand einer gegebenen Statistik bewertet, und dem Algorithmus anhanddessen Feedback gibt, den sog. Reward. Diesen Reward benutzt der Algorithmus dann, um sich eigenständig zu verbessern.
+\end{itemize}
+
+In der jetzigen Implementation des Crawlers basiert der Reward alleine auf der Veränderung der Radposition. Wenn die Positionen der Inkrementalgeber auf eine Vorwärtsbewegung schließen lassen, erhält der Algorithmus einen positiven Reward. Bei einer Rückwärtsbewegung oder keiner Veränderung ist der Reward negativ.
+
 \subsection{Hardware}
 
 \subsubsection{Auswahl der Hauptkomponenten}
