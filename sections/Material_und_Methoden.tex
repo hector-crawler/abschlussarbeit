@@ -10,12 +10,12 @@ Zu Beginn des Projekts wurde der einarmige Krabbelroboter des Vorgängerprojekts
 
 Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinande verbunden. Die Gelenke wurden durch Dynamixel Motoren dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
 
-Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibene unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
+Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibende unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
 \begin{align}
   n = m \cdot (N - 1 - J) + \sum_{i=1}^{J}f_i \noindent \\
   n = 6 \cdot (3 - 1 - 2) + \sum_{i=1}^{2}1 = 6 \cdot 0 + 2 = 2
 \end{align}
-Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starkörpers (m = 6 im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
+Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starrkörpers ($m = 6$ im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starrkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
 
 Des Weiteren wurde die Form des Konfigurationsraum des Roboters untersucht. Der Konfigurationsraum beschreibt alle möglichen Positionen und Orientierungen des Roboters im Raum. Mit der Form ist seine topologische Struktur gemeint, sprich wie die möglichen Konfigurationen (alle Konfigurationen zusammen ergeben den Konfigurationsraum) zusammenhängen. Da der Krabbel-Roboter zwei zyklische Rotationsgelenke hat, ergibt sich die Form eines zweidimensionalen Torus $(T^2 = S^1 \times S^1)$, wobei $S^1$ die Menge aller Punkte auf einem Kreis darstellt \cite{robotik_scriptum}. Abbildung \ref{fig:torus} zeigt dies visuell.
 \begin{figure}[h]
@@ -81,13 +81,13 @@ Die Architektur der Crawler-Software, also die Strukturierung des Codes, war ein
 
 \subsubsection{Robot Operating System (ROS)}
 
-Das Robot Operating System (ROS)\cite{ros} ist ein quelloffenes Softwareframework zur Entwicklung von Robotern. Es bildet eine Middleware zur Verwaltung und einzelner Softwarekomponenten, sowie deren Kommunikation untereinander. Diese Komponenten (genannt ``Nodes'') können jeweils in einer beliebigen Programmiersprache (hier Python) implementiert, und bei Programmstart von ROS ausgeführt werden. Die Nodes laufen in getrennten Prozessen. Kommunikation zwischen diesen Nodes geschieht über Kanäle in ROS (genannt ``Topics''), auf denen Nachrichten von sog. Publisher-Nodes gesendet und von sog. Subscriber-Nodes gelesen werden können. Die Datentypen dieser Nachrichten können pro Topic festgelegt werden. Diese Datentypen können grundlegende Typen wie Zahlen oder Strings, aber auch komplexere, im Code festgelegte Datenstukturen sein.
+Das Robot Operating System (ROS)\cite{ros} ist ein quelloffenes Softwareframework zur Entwicklung von Robotern. Es bildet eine Middleware zur Verwaltung einzelner Softwarekomponenten, sowie deren Kommunikation untereinander. Diese Komponenten (genannt ``Nodes'') können jeweils in einer beliebigen Programmiersprache (hier Python) implementiert, und bei Programmstart von ROS ausgeführt werden. Die Nodes laufen in getrennten Prozessen. Kommunikation zwischen diesen Nodes geschieht über Kanäle in ROS (genannt ``Topics''), auf denen Nachrichten von sog. Publisher-Nodes gesendet und von sog. Subscriber-Nodes gelesen werden können. Die Datentypen dieser Nachrichten können pro Topic festgelegt werden. Diese Datentypen können grundlegende Typen wie Zahlen oder Strings, aber auch komplexere, im Code festgelegte Datenstukturen sein.
 
 Im Vergleich zur Legacy-Codebase haben wir das Projekt von ROS 1 zu ROS 2 portiert. ROS 2 ist zum Zeitpunkt der Arbeit die neueste Major-Version von ROS und unterstützt modernere Versionen des Ubuntu-Betriebssystems. Dadurch konnten wir das Betriebssystem auf dem Raspberry Pi von Ubuntu 18.04 auf Ubuntu 24.04 upgraden. Support für ROS 1 endete außerdem im Mai 2025, während der Laufzeit des Projekts, und die Legacy-installation hätte keine Updates mehr erhalten.
 
 \subsubsection{pixi}
 
-pixi ist ein Tool für Softwareentwickler, das die Verwaltung von Software-Bibliotheken vereinfacht und gleichzeitig als Build-System dient. Bibliotheken und Build-Befehle werden von pixi in einer Textdatei im Projektverzeichnis gespeichert, sodass die gesamte Entwicklungsumgebung unabhängig vom Hostsystem reproduzierbar ist.
+pixi ist ein Tool zur Softwareentwicklung, das die Verwaltung von Software-Bibliotheken vereinfacht und gleichzeitig als Build-System dient. Bibliotheken und Build-Befehle werden von pixi in einer Textdatei im Projektverzeichnis gespeichert, sodass die gesamte Entwicklungsumgebung unabhängig vom Hostsystem reproduzierbar ist.
 
 Um das Programm auf dem Roboter auszuführen, sind mehrere Schritte notwendig:
 \begin{itemize}
@@ -130,15 +130,15 @@ Für die Verbindung zwischen den Motoren und dem Steuerrechner kommt der \textit
 
 \subsubsection{Spannungsversorgung}
 
-Da der alte Akku, ein \textit{XCell LiPo Cracker CAR} \cite{xcell_akku} mit zwei Zellen, $7,4V$ und $5400mAh$, durch sein hohes Gewicht von $310g$ ca. $25\%$ des Gesamtgewichts des Roboters ausmachte, wurde ein leichterer Akku gesucht.
+Da der alte Akku, ein \textit{XCell LiPo Cracker CAR} \cite{xcell_akku} mit zwei Zellen, 7,4V und 5400mAh, durch sein hohes Gewicht von 310g ca. 25\% des Gesamtgewichts des Roboters ausmachte, wurde ein leichterer Akku gesucht.
 
-Der neu ausgewählte \textit{Gens ace Modellbau-Akkupack (LiPo)} \cite{gens_ace_akku} ist mit seinen ebenfalls $7,4V$ Ausgangsspannung ähnlich aufgebaut, wiegt allerdings nur noch $66g$ und ist deutlich kompakter. Aufgrund des geplanten Einsatz als Demonstrationsroboters ist auch die damit verbundenen geringere Laufzeit kein Problem. 
+Der neu ausgewählte \textit{Gens ace Modellbau-Akkupack (LiPo)} \cite{gens_ace_akku} ist mit seinen ebenfalls 7,4V Ausgangsspannung ähnlich aufgebaut, wiegt allerdings nur noch 66g und ist deutlich kompakter. Aufgrund des geplanten Einsatz als Demonstrationsroboters ist auch die damit verbundenen geringere Laufzeit kein Problem. 
 
 $t_{\text{Versorgung, alt}} = \frac{5400\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 5\,\mathrm{h} \newline
 \newline
 t_{\text{Versorgung, neu}} = \frac{1500\,\mathrm{mAh}}{1070\,\mathrm{mA}} \approx 1{,}4\,\mathrm{h}$
 
-$1070mA$ sind dabei der maximal gemessene Strom (bei der Bewegung der Motoren) und nicht der Normalzustand.
+1070mA sind dabei der maximal gemessene Strom (bei der Bewegung der Motoren) und nicht der Normalzustand.
 
 % \subsubsection{Integration und Inbetriebnahme der Hardware}
 
