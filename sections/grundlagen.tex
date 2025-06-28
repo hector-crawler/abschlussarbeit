@@ -1,3 +1,21 @@
 \section{Grundlagen}
 
-\textit{Einführung in voraugesetzte theoretische Grundlagen; hier viele Zitate}
+% Einführung in voraugesetzte theoretische Grundlagen; hier viele Zitate
+
+\subsection{Robot Operating System (ROS)}
+
+Das Robot Operating System (ROS)\cite{ros} ist ein quelloffenes Softwareframework zur Entwicklung von Robotern. Es bildet eine Middleware zur Verwaltung einzelner Softwarekomponenten, sowie deren Kommunikation untereinander. Diese Komponenten (genannt ``Nodes'') können jeweils in einer beliebigen Programmiersprache (hier Python) implementiert, und bei Programmstart von ROS ausgeführt werden. Die Nodes laufen in getrennten Prozessen. Kommunikation zwischen diesen Nodes geschieht über Kanäle in ROS (genannt ``Topics''), auf denen Nachrichten von sog. Publisher-Nodes gesendet und von sog. Subscriber-Nodes gelesen werden können. Die Datentypen dieser Nachrichten können pro Topic festgelegt werden. Diese Datentypen können grundlegende Typen wie Zahlen oder Strings, aber auch komplexere, im Code festgelegte Datenstukturen sein.
+
+\subsection{Der Lernprozess: Reinforcement Learning}
+
+Im Maschinellen Lernen wird, um selbstlernende Algorithmen zu trainieren, meist das Konzept des Reinforcement Learning (RL) angewendet. Das Konzept besteht in der Regel aus zwei Gegenspielern:
+\begin{itemize}
+    \item Dem Algorithmus, der (anfangs zufällig, später gezielt) Aktionen durchführt.
+    \item Einer Umgebung (dem Environment), welche die Aktionen des Algorithmus anhand einer gegebenen Statistik bewertet, und dem Algorithmus anhanddessen Feedback gibt, den sog. Reward. Diesen Reward benutzt der Algorithmus dann, um sich eigenständig zu verbessern.
+\end{itemize}
+
+In der jetzigen Implementation des Crawlers basiert der Reward alleine auf der Veränderung der Radposition. Wenn die Positionen der Inkrementalgeber auf eine Vorwärtsbewegung schließen lassen, erhält der Algorithmus einen positiven Reward. Bei einer Rückwärtsbewegung oder keiner Veränderung ist der Reward negativ.
+
+\subsubsection{Der Lernprozess: Das Q-Learning}
+
+Das Q-Learning ist ein Algorithmus, der auf die Auswahl einer Aktion aus einer Reihe an Möglichkeiten spezialisiert ist. Dem Algorithmus liegt die Q-Table zugrunde, eine Tabelle, in der jede Zelle eine spezifische Kombination aus einer Input-Option und einer Output-Option darstellt. % TODO: Explain this in detail, hopefully with a diagram
