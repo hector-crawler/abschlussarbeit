@@ -1,5 +1,7 @@
 \section{Material und Methoden}
 
+\textit{muss in Grundlagen, Konzeption und Umsetzung aufgeteilt werden}
+
 \subsection{Mechanischer Aufbau und Konstruktionsprinzipien}
 
 \subsubsection{Analyse des Ausgangsmodells}
@@ -99,7 +101,11 @@ Um das Programm auf dem Roboter auszuführen, sind mehrere Schritte notwendig:
 
 Da der Build-Prozess der Web-Komponente auf dem Raspberry Pi ziemlich lange dauert, kann die Web-Komponente auch zuerst lokal auf dem eigenen Rechner gebaut werden, damit die resultierende HTML-Datei direkt auf den Pi synchronisiert werden kann.
 
-Mit pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark vereinfachen. Die einzelnen Schritte sind in Pixi-Befehlen wie \texttt{pixi run upload} oder \texttt{pixi run build-web} definiert, was die Arbeit mit der Codebase wesentlich erleichtert. Im Vergleich zum Vorgängerprojekt ist es außerdem nun leichter, den Build-Prozess zu dokumentieren und zu überliefern. Die Befehle zum Starten des Legacy-Programms mussten uns bei der Projektübergabe noch mündlich mitgeteilt werden, da sie in der Legacy-Codebase nicht festgehalten waren.
+Mit pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark vereinfachen. Die einzelnen Schritte sind in Pixi-Befehlen wie \texttt{pixi run upload} oder \texttt{pixi run build-web} definiert, was die Arbeit mit der Codebase wesentlich erleichtert. Im Vergleich zum Vorgängerprojekt ist es außerdem nun leichter, den Build-Prozess zu dokumentieren und zu überliefern. Die Befehle zum Starten des Legacy-Programms mussten uns bei der Projektübergabe noch mündlich mitgeteilt werden, da sie in der Legacy-Codebase nicht festgehalten waren. Ferner ist es nun praktikabel, den Programmcode lokal in einer vollwertigen Entwicklungsumgebung (und ggf. gleichzeitig auf verschiedenen Endgeräten) zu schreiben und anschließend zu synchronisieren, statt hierfür auf den Raspberry Pi beschränkt zu sein, was die Entwicklung signifikant beschleunigt. 
+
+\subsubsection{Webtechnologien}
+
+Bereits das unmittelbare Vorgängerprojekt hatte die Verbesserung des Crawlers zu Demonstrationszwecken zum Ziel, indem ein simples Webinterface zur manuellen Steuerung der Aktoren sowie zum Starten und Überwachen des Reinforcement Learning implementiert wurde. Wir führten diesen Gedanken weiter und 
 
 \subsection{Hardware}
 
