@@ -120,9 +120,16 @@ Mit Pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark 
 \textit{\dots}
 % TODO
 
-\subsubsection{Webtechnologien}
+\subsubsection{Architektur der ROS-Nodes}
 
-Bereits das unmittelbare Vorgängerprojekt hatte die Verbesserung des Crawlers hinsichtlich seiner Eignung zu Demonstrationszwecken zum Ziel, indem ein simples Webinterface zur manuellen Steuerung sowie zum Starten und Überwachen des Reinforcement Learning implementiert wurde. Wir führten diesen Gedanken weiter und % TODO ...
+\textit{welche Nodes und Topics existieren, in welchem Verhältnis sie zueinander stehen ($\rightarrow$ Diagramm); wieso die Nodes aufgeteilt sind (anders als zuvor); \texttt{crawler\_rl\_environment} als Interface zwischen RL-Welt und Hardware-Welt \dots}
+% TODO
+
+\subsubsection{Webinterface}
+
+Bereits das unmittelbare Vorgängerprojekt hatte die Verbesserung des Crawlers hinsichtlich seiner Eignung zu Demonstrationszwecken zum Ziel, indem ein simples Webinterface zur manuellen Steuerung sowie zum Starten und Überwachen des Reinforcement Learning implementiert wurde. Wir führten diesen Gedanken weiter, indem wir ein neues Webinterface von Grund auf neu entwickelten. Da die Verwendung des Crawlers zu Demonstrationszwecken die für unser Projekt am relevantesten erscheinende Anwendung ist, investierten wir hierbei auch über reines Funktionieren hinaus in eine flüssige und ansehnliche Benutzererfahrung. 
+
+Neben einer Home-Seite mit einführenden Informationen zum Crawler und Links zur GitHub-Seite hat das Webinterface zwei Hauptfunktionen. Zunächst ist das die manuelle Kontrolle (\textbf{Manual Control}) aller Hardwarekomponenten, d. h. Steuerung der Motoren und Darstellung der von den Inkrementalgebern eingelesenen Daten, was bspw. zum Debuggen in einem früheren Stadium des Projekts sehr praktisch war und weiterhin sein wird. Das \textbf{RL Control} bietet eine Benutzeroberfläche zum Konfigurieren und Starten des Reinforcement Learning zur Steuerung des Roboters. Im laufenden Betrieb des RL-Algorithmus werden außerdem in Echtzeit Informationen zum aktuellen internen Zustand angezeigt, die möglichst anschaulich visualisiert werden, sodass man als Publikum oder Forschende etc. die Funktionsweise des Demonstrationsroboter leicht nachvollziehen kann.
 
 \subsection{Hardware}
 
