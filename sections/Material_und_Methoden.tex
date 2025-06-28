@@ -107,6 +107,20 @@ Mit pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark 
 
 Bereits das unmittelbare Vorgängerprojekt hatte die Verbesserung des Crawlers zu Demonstrationszwecken zum Ziel, indem ein simples Webinterface zur manuellen Steuerung der Aktoren sowie zum Starten und Überwachen des Reinforcement Learning implementiert wurde. Wir führten diesen Gedanken weiter und 
 
+\subsubsection{Der Lernprozess: Reinforcement Learning}
+
+Im Maschinellen Lernen wird, um selbstlernende Algorithmen zu trainieren, meist das Konzept des Reinforcement Learning (RL) angewendet. Das Konzept besteht in der Regel aus zwei Gegenspielern:
+\begin{itemize}
+    \item Dem Algorithmus, der (anfangs zufällig, später gezielt) Aktionen durchführt.
+    \item Einer Umgebung (dem Environment), welche die Aktionen des Algorithmus anhand einer gegebenen Statistik bewertet, und dem Algorithmus anhanddessen Feedback gibt, den sog. Reward. Diesen Reward benutzt der Algorithmus dann, um sich eigenständig zu verbessern.
+\end{itemize}
+
+In der jetzigen Implementation des Crawlers basiert der Reward alleine auf der Veränderung der Radposition. Wenn die Positionen der Inkrementalgeber auf eine Vorwärtsbewegung schließen lassen, erhält der Algorithmus einen positiven Reward. Bei einer Rückwärtsbewegung oder keiner Veränderung ist der Reward negativ.
+
+\subsubsection{Der Lernprozess: Das Q-Learning}
+
+Das Q-Learning ist ein Algorithmus, der auf die Auswahl einer Aktion aus einer Reihe an Möglichkeiten spezialisiert ist. Dem Algorithmus liegt die Q-Table zugrunde, eine Tabelle, in der jede Zelle eine spezifische Kombination aus einer Input-Option und einer Output-Option darstellt. % TODO: Explain this in detail, hopefully with a diagram
+
 \subsection{Hardware}
 
 \subsubsection{Auswahl der Hauptkomponenten}
