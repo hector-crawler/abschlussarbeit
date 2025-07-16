@@ -1,3 +1,22 @@
 \section{Umsetzung}
 
-\textit{kann z. B. chronologisch sein; Hindernisse nennen; Besonderheiten, Strukturierung, Programmiersprache, ...}
+\subsection{Hardware}
+
+Ausgehend von der theoretischen und praktischen Analyse des bestehenden Roboters (siehe Abschnitt~\ref{sec:konzeption}) wurde ein neues mechanisches Konzept für das Chassis des Krabbelroboters 
+entwickelt. Ziel war es, die Komponenten platzsparend, gewichtsoptimiert und modular anzuordnen um die Zugänglichkeit zu erweitern.
+
+Zunächst erfolgte eine Recherche der Maße der Bauteile. Auf Basis dieser Daten wurde eine grobe Anordnung in Form einer Handskizze konzipiert, um ein erstes Gefühl für die Platzverhältnisse zu bekommen.
+
+Das daraus abgeleitete 3D-Modell wurde mithilfe von Autodesk Fusion 360 erstellt. Die Konstruktion wurde in zwei funktionale Ebenen aufgeteilt: 
+eine untere Ebene zur zur Steuerung der Motoren und eine obere Ebene zur Steuerung der restlichen Bauteile. 
+Die Ebenen wurden als separate Körper modelliert, um spätere Anpassungen zu erleichtern.
+
+Der erste 3D-Druck diente zur Kalibrierung der Maße und Überprüfung der Passgenauigkeit. Dabei traten mehrere Fehler auf: 
+Einige Schraubenlöcher waren falsch positioniert, die Inkrementalgeber lagen zu nah beieinander, und die Höhe der oberen Griffe erwies sich als zu gering, 
+da die Akkumaße zunächst nur geschätzt worden waren.
+
+Da der alte Roboter bis dahin noch softwareseitig genutzt wurde, konnte der mechanische Umbau erst nach Abschluss der entsprechenden Software-Tests (z.B. Implementierung des Q-Learnings). 
+Anschließend wurde das CAD-Modell überarbeitet und an die gewonnenen Erkenntnisse angepasst.
+
+Der zweite Druckvorgang verlief erfolgreich: Die Bauteile passten wie geplant, alle Komponenten konnten montiert werden. 
+Der Aufbau des neuen Roboters war damit abgeschlossen und bildete die Grundlage für die weitere softwareseitige Integration.
