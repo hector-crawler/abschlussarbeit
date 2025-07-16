@@ -1,4 +1,5 @@
 \section{Konzeption}
+\label{sec:konzeption}
 
 % in Abgrenzung zu davor beginnt hier die eigene Arbeit
 % zuerst den alten Crawler beschreiben; dann wie der neue aussehen sollte
@@ -13,22 +14,22 @@ Zu Beginn des Projekts wurde der einarmige Krabbelroboter des Vorgängerprojekts
 
 Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinande verbunden. Die Gelenke wurden durch Dynamixel Motoren dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
 
-Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibende unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
-\begin{align}
-  n = m \cdot (N - 1 - J) + \sum_{i=1}^{J}f_i \noindent \\
-  n = 6 \cdot (3 - 1 - 2) + \sum_{i=1}^{2}1 = 6 \cdot 0 + 2 = 2
-\end{align}
-Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starrkörpers ($m = 6$ im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starrkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
+% Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibende unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
+% \begin{align}
+%   n = m \cdot (N - 1 - J) + \sum_{i=1}^{J}f_i \noindent \\
+%   n = 6 \cdot (3 - 1 - 2) + \sum_{i=1}^{2}1 = 6 \cdot 0 + 2 = 2
+% \end{align}
+% Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starrkörpers ($m = 6$ im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starrkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
 
-Des Weiteren wurde die Form des Konfigurationsraum des Roboters untersucht. Der Konfigurationsraum beschreibt alle möglichen Positionen und Orientierungen des Roboters im Raum. Mit der Form ist seine topologische Struktur gemeint, sprich wie die möglichen Konfigurationen (alle Konfigurationen zusammen ergeben den Konfigurationsraum) zusammenhängen. Da der Krabbel-Roboter zwei zyklische Rotationsgelenke hat, ergibt sich die Form eines zweidimensionalen Torus $(T^2 = S^1 \times S^1)$, wobei $S^1$ die Menge aller Punkte auf einem Kreis darstellt \cite{robotik_scriptum}. Abbildung \ref{fig:torus} zeigt dies visuell.
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.7\textwidth]{torus.png}
-  \caption{Der Konfigurationsraum des Krabbelroboters als Torus, aus \glqq Grundlagen der Robotik\grqq \ \cite{robotik_scriptum}.}
-  \label{fig:torus}
-\end{figure}
+% Des Weiteren wurde die Form des Konfigurationsraum des Roboters untersucht. Der Konfigurationsraum beschreibt alle möglichen Positionen und Orientierungen des Roboters im Raum. Mit der Form ist seine topologische Struktur gemeint, sprich wie die möglichen Konfigurationen (alle Konfigurationen zusammen ergeben den Konfigurationsraum) zusammenhängen. Da der Krabbel-Roboter zwei zyklische Rotationsgelenke hat, ergibt sich die Form eines zweidimensionalen Torus $(T^2 = S^1 \times S^1)$, wobei $S^1$ die Menge aller Punkte auf einem Kreis darstellt \cite{robotik_scriptum}. Abbildung \ref{fig:torus} zeigt dies visuell.
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{torus.png}
+%   \caption{Der Konfigurationsraum des Krabbelroboters als Torus, aus \glqq Grundlagen der Robotik\grqq \ \cite{robotik_scriptum}.}
+%   \label{fig:torus}
+% \end{figure}
 
-Das Robotersystem entspricht also einem (autonomen) mobilen Roboter mit 2 DoF und einem planaren 2R-Roboterarm. Daraus ließe sich eine Kinematische Modellierung bzw. Simulation erstellen, die allerdings nicht im Rahmen dieser Abschlussarbeit angefertigt wurde. 
+% Das Robotersystem entspricht also einem (autonomen) mobilen Roboter mit 2 DoF und einem planaren 2R-Roboterarm. Daraus ließe sich eine Kinematische Modellierung bzw. Simulation erstellen, die allerdings nicht im Rahmen dieser Abschlussarbeit angefertigt wurde. 
 
 \textbf{Funktionsumfang}
 
