@@ -84,6 +84,8 @@ Diese Zielkriterien bildeten die Grundlage für die Auswahl der Bauteile (bzw. d
 
 Die Architektur der Crawler-Software, also die Strukturierung des Codes, war einer der wichtigsten Verbesserungspunkte im Vergleich zum Vorgängerprojekt (im Folgenden mit ``Legacy-'' bezeichnet). 
 
+% TODO: hier direkt einfügen, dass wir es neu geschrieben haben?
+
 \subsubsection{Upgrade von ROS 1 zu ROS 2}
 
 Im Vergleich zur Legacy-Codebase portierten wir das Projekt von ROS 1 zu ROS 2. ROS 2 ist zum Zeitpunkt der Arbeit die neueste Major-Version von ROS und unterstützt modernere Versionen des Ubuntu-Betriebssystems. Dadurch konnten wir das Betriebssystem auf dem Raspberry Pi von Ubuntu 18.04 auf Ubuntu 24.04 upgraden. Support für ROS 1 endete außerdem im Mai 2025, während der Laufzeit des Projekts, und die Legacy-installation hätte keine Updates mehr erhalten. Das Upgrade von ROS 1 auf ROS 2 erfordert einige grundlegendere Veränderungen an einem ROS-Projekt, da wir aber ohnehin eine vollständige Überarbeitung der Codebase anstrebten, bedeutete dies praktischerweise keinen zusätzlichen Aufwand. 
@@ -123,8 +125,18 @@ Mit Pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark 
 
 \subsubsection{Architektur der ROS-Nodes}
 
-\textit{welche Nodes und Topics existieren, in welchem Verhältnis sie zueinander stehen ($\rightarrow$ Diagramm); wieso die Nodes aufgeteilt sind (anders als zuvor); \texttt{crawler\_rl\_environment} als Interface zwischen RL-Welt und Hardware-Welt \dots}
-% TODO
+%- Architektur als Hauptverbesserungspunkt
+%- wie es davor war:
+%  - fehlende Sortierung zwischen Scripts, Backend-Code, Frontend-Code
+%  - zwar verschiedene Nodes, aber trotzdem z.B. Hardware-Steuerung Teil der q_learning-Node etc.
+%- wieso die Nodes aufgeteilt sind (anders als zuvor)
+%- welche Nodes und Topics existieren, in welchem Verhältnis sie zueinander stehen:
+%  - Hardware-Nodes, Web API; crawler_rl_environment, crawler_q_learning; crawler_rl_environment als Interface zwischen RL-Welt und Hardware-Welt
+%  -> Diagramm
+
+Die Verbesserung der Codebase zeigt sich vor allem in der Architektur der ROS-Nodes. In der Legacy-Codebase fanden wir initial eine Datei- und Codestruktur vor, die unseren persönlichen stilistischen Präferenzen nicht vollständig entsprach. Insbesondere in der Umsetzung einer für ROS-Applikationen idiomatischen Aufteilung in mehrere Nodes sahen wir Verbesserungspotenzial, da bspw. Code zur konkreten Hardwaresteuerung nicht von der Implementation des Q-Learning-Algorithmus abgegrenzt und an verschiedenen Stellen mehrfach dupliziert war. Neben dem zusätzlichen Aufwand, der mit dem Weiterentwickeln einer unbekannten Codebase immer verbunden ist, waren diese nicht schwerwiegenden oder unlösbaren, aber weitreichenden, stilistischen und architektonischen Differenzen mit der Legacy-Codebase der Grund für unsere Entscheidung, die Crawler-Software unter Zuhilfenahme des existierenden Codes von Grund auf neu zu schreiben. 
+
+Unserer Architektur der ROS-Nodes liegt im Vergleich mit dem Vorgängerprojekt das Prinzip der Separation of Concerns zugrunde, ...
 
 \subsubsection{Webinterface}
 
