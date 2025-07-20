@@ -1,5 +1,13 @@
 \section{Umsetzung}
 
+\subsection{Übernahme des Legacy-Projekts}
+
+Erstes Ziel war zu Projektbeginn, das Vorgängerprojekt zu reaktivieren und zum Laufen zu bekommen. Entsprechende Versuche scheiterten jedoch an unterschiedlichen Faktoren: Der Quellcode des Legacy-Programms war zwar öffentlich auf GitHub synchronisiert, allerdings ohne jegliche Anleitung bezüglich des Programmstarts, benötigter Software-Bibliotheken oder Veränderungen an der Installation des Linux-Betriebssystems. Nach mehreren Stunden des Debuggens war der beste Zustand, den wir erreichen konnten, das Programm mit ROS 1 in einem Docker-Image auszuführen. Da die isolierte Container-Umgebung allerdings scheinbar immer noch nicht den nötigen Startbedingungen entsprach, stürzte das Legacy-Programm weiterhin nach Start sofort ab. Nachdem die Arbeit eines ganzen Tages ein so enttäuschendes Ergebnis geliefert hatte, entschieden wir, das Programm von Grund auf neu zu schreiben und dabei den Fokus auf gute Dokumentation des Projekts und eine gute Developer Experience zu legen, um uns selbst sowie möglichen Nachfolgern des Projekt die Arbeit softwareseitig zu erleichtern.
+
+\subsection{Probleme mit dem Raspberry Pi}
+
+Im Zuge des Neuschreibens der Codebase sollte auch die auf dem Raspberry Pi installierte Ubuntu-Version angehoben werden. Als wir allerdings versuchten, den Microcontroller auf dem alten Roboter zu starten, hing dieser stets in einer Boot-Schleife, startete also nicht das Betriebssystem. Nach wiederum einem Tag des Debuggens mit verschiedenen Betriebssystemen, Speichermedien, Netzteilen und Monitorkabeln war mit dem alten Raspberry Pi immer noch kein Betriebbsystem zu starten. Wir kamen zu dem Schluss, dass der spezifische Raspberry Pi auf dem alten Roboter zu Schaden gekommen sein musste, seit wir das letzte Mal damit gearbeitet hatten, vermutlich im Transport. Freundlicherweise konnte uns Prof. Dr. Ihme ein Ersatzmodell aus dem Inventar der Technischen Hochschule Mannheim beschaffen, sodass wir zeitig an dem Projekt weiterarbeiten konnten.
+
 \subsection{Hardware}
 
 Ausgehend von der theoretischen und praktischen Analyse des bestehenden Roboters (siehe Abschnitt~\ref{sec:konzeption}) wurde ein neues mechanisches Konzept für das Chassis des Krabbelroboters 
