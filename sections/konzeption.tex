@@ -111,8 +111,32 @@ Mit Pixi konnten wir diesen mehrschrittigen Build-Prozess auf dem Roboter stark 
 
 \textbf{Python Type Hints}
 
-\textit{\dots}
-% TODO
+Ein weiterer Schritt in der Verbesserung der Developer Experience war das Hinzufügen sogenannter Type Hints in der Python-Codebase. Als Programmiersprache mit dynamischen Typen passieren in Python schnell Fehler, wenn Variablen bezüglich ihres Typs falsch verwendet werden.
+
+Der folgende Python-Code produziert bei seiner Ausführung eine Fehlermeldung wegen falsch verwendeter Typen:
+
+\begin{lstlisting}[language=Python]
+def greet(s):
+	# An dieser Stelle entsteht ein "TypeError".
+	return "Hello " + s
+
+greet(1)
+\end{lstlisting}
+
+Diese Fehlermeldung kann wegen der dynamischen Funktionsweise von Python jedoch erst während der Ausführung des Programms entdeckt werden. Type Hints können in einer Codebase hinzugefügt werden, um diese Art der Fehler automatisch zu finden und zu korrigieren, ohne dass eine Ausführung des Programms notwendig ist. Durch entsprechendes Tooling in der Arbeitsumgebung kann dieser Prozess nahtlos in den Entwicklungsprozess integriert werden.
+
+Im gezeigten Python-Code sähen Type Hints folgendermaßen aus:
+
+\begin{lstlisting}[language=Python]
+def greet(s: str) -> str:
+	return "Hello " + s
+
+greet(1)
+\end{lstlisting}
+
+Die hinzugefügten Type Hints geben an, dass die Variable \texttt{s} vom Typ String sein muss, sowie, dass die \texttt{greet}-Funktion einen String als Output produziert.
+
+Wir nutzten mypy \cite{mypy}, um die Nutzung von Type Hints strikt durchzusetzen und von ihnen im Entwicklungsprozess Gebrauch zu machen.
 
 \subsubsection{Architektur der ROS-Nodes}
 
