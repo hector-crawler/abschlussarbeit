@@ -123,7 +123,7 @@ def greet(s):
 greet(1)
 \end{lstlisting}
 
-Diese Fehlermeldung kann wegen der dynamischen Funktionsweise von Python jedoch erst während der Ausführung des Programms entdeckt werden. Type Hints können in einer Codebase hinzugefügt werden, um diese Art der Fehler programmatisch zu finden und zu korrigieren, ohne dass eine Ausführung des Programms notwendig ist. Durch entsprechendes Tooling in der Arbeitsumgebung kann dieser Prozess nahtlos in den Entwicklungsprozess integriert werden.
+Diese Fehlermeldung kann wegen der dynamischen Funktionsweise von Python jedoch erst während der Ausführung des Programms entdeckt werden. Type Hints können in einer Codebase hinzugefügt werden, um diese Art der Fehler automatisch zu finden und zu korrigieren, ohne dass eine Ausführung des Programms notwendig ist. Durch entsprechendes Tooling in der Arbeitsumgebung kann dieser Prozess nahtlos in den Entwicklungsprozess integriert werden.
 
 Im gezeigten Python-Code sähen Type Hints folgendermaßen aus:
 
@@ -134,9 +134,9 @@ def greet(s: str) -> str:
 greet(1)
 \end{lstlisting}
 
-Die hinzugefügten Type Hints geben an, dass die Variable \texttt{s} vom Typ ein String sein muss, sowie dass die \texttt{greet}-Funktion einen String als Output produziert.
+Die hinzugefügten Type Hints geben an, dass die Variable \texttt{s} vom Typ String sein muss, sowie, dass die \texttt{greet}-Funktion einen String als Output produziert.
 
-Wir nutzten mypy \cite{mypy} um die Nutzung von Type Hints strikt durchzusetzen und von ihnen im Entwicklungsprozess Gebrauch zu machen.
+Wir nutzten mypy \cite{mypy}, um die Nutzung von Type Hints strikt durchzusetzen und von ihnen im Entwicklungsprozess Gebrauch zu machen.
 
 \subsubsection{Architektur der ROS-Nodes}
 
