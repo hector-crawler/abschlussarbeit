@@ -24,13 +24,34 @@ Insgesamt konnte das Gewicht des Roboters durch die neue Konstruktion aber reduz
 
 Die optionalen Gestaltungskriterien wurden nicht umgesetzt. 
 
+\textbf{Bewertung der softwareseitigen Arbeit}
+
+Die neue Programm wurde in der Laufzeit des Projekts auf denselben Funktionsstand des Legacy-Programms gebracht, darüber hinaus wurden kaum Funktionen hinzugefügt. Allerdings wurde das gesamte bestehende Programm in nahezu jeder Hinsicht verbessert:
+
+\begin{itemize}
+	\item Das Webinterface wurde mit modernen Bibliotheken reimplementiert und im Zuge dessen visuell ansprechender gestaltet.
+	\item Der Entwicklungsprozess wurde wesentlich reibungsloser und angenehmer gestaltet. Zukünftige Entwicklung am Roboter sollte wesentlich schneller verlaufen können.
+	\item Der gesamte Entwicklungsprozess sowie die benötigte Entwicklungsumgebung sind gut dokumentiert und leicht zu verwalten. Dies wird zukünftigen Neukömmlingen zum Projekt den Projektanfang stark erleichtern.
+	\item Das neue Programm wurde wesentlich modularer gestaltet, was künftige Änderungen und Additionen erleichtert.
+\end{itemize}
+
+Auch wenn der Projektstand zunächst im Vergleich zum Vorgängerprojekt nicht fortgeschritten zu sein scheint, wurde doch viel an der Software weiterentwickelt, und die Ergebnisse können sich durchaus zeigen lassen.
+
 \subsection{Erkenntnisse und Deutung}
 
 Rückblickend wurde der Aufwand für die mechanische Umsetzung deutlich unterschätzt. Insbesondere die CAD-Konstruktion, das mehrfache Drucken, der Abbau des alten Roboters und der anschließende Aufbau des neuen Systems nahmen mehr Zeit in Anspruch als geplant. Das Zeitmanagement hätte entsprechend besser abgestimmt werden müssen, um Engpässe in der finalen Phase zu vermeiden.
 
+Triviale Hindernisse wie ein defekter Raspberry Pi oder das Starten des Legacy-Programms waren ebenfalls für Verzögerungen im Projektablauf verantwortlich. Diese Hindernisse wurden anfangs auch nicht bedacht, obwohl man mit Problemen solcher Art hätte rechnen können. Sie waren ebenfalls Grund, dass nicht alle vorgesehenen Ziele rechtzeitig erreicht werden konnten.
+
 \subsection{Ausblick und offene Fragen}
 
+\textbf{Mechanischer Aufbau}
+
 Für eine zukünftige mechanische Weiterentwicklung wäre ein strukturierterer Innenaufbau sinnvoll, um Ordnung und Zugänglichkeit weiter zu erhöhen. Auch die angesprochenen fehlenden Tests fanden bisher nicht statt, obwohl diese helfen könnten, Schwachstellen besser zu erkennen. Darüber hinaus wäre eine umfassendere strukturelle Analyse des Roboters hilfreich, um mechanische Belastungen gezielter beurteilen und optimieren zu können.
+
+\textbf{Software-Algorithmen}
+
+Softwareseitig wäre der genauere Vergleich verschiedener Machine-Learning-Algorithmen interessant zu untersuchen, etwa zwischen dem existierenden Q-Learning-Algorithmus und einer Implementation eines neuronalen Netzwerks. Aufgrund der mangelnden Verfügbarkeit der Motoren des Roboters konnte der Vergleich in der Zeit unseres Projekts nicht durchgeführt werden.
 
 % \section{Zusammenfassung} % Laut den Vorlagen auf Moodel brauchen wir das nicht?
 
