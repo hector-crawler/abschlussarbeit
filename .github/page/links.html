@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Link-Sammlung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0000ff;
+      --text: #000;
+      --background: #ffffff;
+      --link-bg: #cfe2f3;
+      --link-hover: #b7d2eb;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .link-list {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .link-card {
+      background-color: var(--link-bg);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      background-color: var(--link-hover);
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Crawler Links</h1>
+  <div class="link-list">
+    <a class="link-card" href="https://hector-crawler.github.io/abschlussarbeit/abschlussbericht.pdf" target="_blank">📄 Abschlussarbeit</a>
+    <a class="link-card" href="https://github.com/hector-crawler" target="_blank">💻 GitHub-Organisation</a>
+    <a class="link-card" href="https://docs.google.com/presentation/d/1ciT2NNRw48gtDPf55ez7xs-akFsFxoeRcali88h25Yw/edit?usp=sharing" target="_blank">📊 Abschlusspräsentation</a>
+  </div>
+</body>
+</html>
