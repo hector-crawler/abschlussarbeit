@@ -1,6 +1,7 @@
 \section{Grundlagen}
+\label{sec:grundlagen}
 
-% Einführung in voraugesetzte theoretische Grundlagen; hier viele Zitate
+Im folgenden Abschnitt werden Konzepte erklärt, die für die softwareseitige Entwicklung des Krabbelroboters grundlegend waren. Diese Konzepte werden in späteren Teilen des Artikels vorausgesetzt.
 
 \subsection{Robot Operating System (ROS)}
 
@@ -17,7 +18,7 @@ Im Maschinellen Lernen wird, um selbstlernende Algorithmen zu trainieren, meist 
 
 In der jetzigen Implementation des Crawlers basiert der Reward alleine auf der Veränderung der Radposition. Wenn die Positionen der Inkrementalgeber auf eine Vorwärtsbewegung schließen lassen, erhält der Algorithmus einen positiven Reward. Bei einer Rückwärtsbewegung oder keiner Veränderung ist der Reward negativ.
 
-\subsubsection{Der Lernprozess: Das Q-Learning}
+\subsection{Der Lernprozess: Das Q-Learning}
 
 Das Q-Learning ist ein Algorithmus, der auf die Auswahl einer Aktion aus einer Reihe an Möglichkeiten spezialisiert ist. Dem Algorithmus liegt die Q-Table zugrunde, eine Tabelle, in der jede Zelle eine spezifische Kombination aus einer Input-Option (einem Zustand der Umgebung) und einer Output-Option (einer Aktion) darstellt. Jede Zelle ist außerdem mit einer Zahl besetzt. Soll der Algorithmus eine Aktion auswählen, wählt er aus den Zellen, deren Input-Option dem Zustand der Umgebung entspricht, die Zelle, deren Zahl am höchsten ist. Die zugehörige Aktion ist dann das Ergebnis des Algorithmus. Wird das Q-Learning in Kombination mit dem Konzept des RL angewandt, wird die Zahl in der ausgewählten Zelle je nach resultierendem Reward angepasst: Bei positivem Reward wird sie vergrößert, bei negativem Reward verringert. Um den Einfluss verschiedener Aktionen auf die Umgebung zu erkunden, wird der Output anfangs noch ab und zu zufällig ausgewählt, mit voranschreitender Wiederholungszahl passiert dies allerdings immer seltener.
 
