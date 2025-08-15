@@ -22,7 +22,7 @@ In der jetzigen Implementation des Crawlers wird der Reward alleine auf Basis de
 
 Das Q-Learning ist ein Algorithmus, der auf die Auswahl einer Aktion aus einer Reihe an Möglichkeiten spezialisiert ist. Dem Algorithmus liegt die Q-Table zugrunde, eine Tabelle, in der jede Zelle eine spezifische Kombination aus einer Input-Option (einem Zustand der Umgebung) und einer Output-Option (einer Aktion) darstellt. Jede Zelle ist außerdem mit einer Zahl besetzt. Soll der Algorithmus eine Aktion auswählen, wählt er aus den Zellen, deren Input-Option dem Zustand der Umgebung entspricht, die Zelle, deren Zahl am höchsten ist. Die zugehörige Aktion ist dann das Ergebnis des Algorithmus. Wird das Q-Learning in Kombination mit dem Konzept des RL angewandt, wird die Zahl in der ausgewählten Zelle je nach resultierendem Reward angepasst: Bei positivem Reward wird sie vergrößert, bei negativem Reward verringert. Um den Einfluss verschiedener Aktionen auf die Umgebung zu erkunden, wird der Output anfangs noch ab und zu zufällig ausgewählt, mit voranschreitender Wiederholungszahl passiert dies allerdings immer seltener.
 
-In der Q-Learning-Implementation des Crawlers werden die Positionen der Motoren an Arm- und Hand-Gelenk des Roboters als Input-Optionen genutzt. Um die Dimensionen der Q-Table zu begrenzen, werden die Positionen allerdings nur grob als "oben", "mittig" oder "unten" ausgelesen. Output-Optionen sind "Arm hoch", "Arm runter", "Hand hoch" und "Hand runter".
+In der Q-Learning-Implementation des Crawlers werden die Positionen der Motoren an Bein- und Fuß-Gelenk des Roboters als Input-Optionen genutzt. Um die Dimensionen der Q-Table zu begrenzen, werden die Positionen allerdings nur grob als "oben", "mittig" oder "unten" ausgelesen. Output-Optionen sind "Bein hoch", "Bein runter", "Fuß hoch" und "Fuß runter".
 
 
 \newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
@@ -34,7 +34,7 @@ In der Q-Learning-Implementation des Crawlers werden die Positionen der Motoren 
 		\toprule
 		{} & {} & \multicolumn{4}{c}{Aktionen} \\
 		\cmidrule{3-6}
-		Zustand Arm & Zustand Hand & \mc{Arm hoch} & \mc{Arm runter} & \mc{Hand hoch} & \mc{Hand runter} \\
+		Zustand Bein & Zustand Fuß & \mc{Bein hoch} & \mc{Bein runter} & \mc{Fuß hoch} & \mc{Fuß runter} \\
 		\midrule
 		Oben & Oben & 0,52 & 0,64 & 0,83 & 0,21 \\
 		& Mittig & 0,80 & 0,06 & 0,75 & 0,66 \\
