@@ -1,18 +1,17 @@
 \section{Konzeption des neuen Krabbelroboters}
 \label{sec:konzeption}
 
-% in Abgrenzung zu davor beginnt hier die eigene Arbeit
-% zuerst den alten Crawler beschreiben; dann wie der neue aussehen sollte
+Im folgenden Abschnitt wird der Zustand des Projekts bei der Übernahme beschrieben, sowie die Zielsetzungen, die sich daraus ergeben. Außerdem werden die Vorgehensweisen dargelegt, die für die Umsetzung jener Ziele geplant sind.
 
 \subsection{Mechanischer Aufbau und Konstruktionsprinzipien}
 
 \subsubsection{Analyse des Ausgangsmodells}
 
-Zu Beginn des Projekts wurde der einbeinige Krabbelroboter des Vorgängerprojekts in Bezug auf Software, Hardware und Funktionsumfang analysiert. Dazu haben wir uns besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}. 
+Zu Beginn des Projekts wird der einarmige Krabbelroboter des Vorgängerprojekts in Bezug auf Software, Hardware und Funktionsumfang analysiert. Dazu wird besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}.
 
 \textbf{Mechanische Analyse}
 
-Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinande verbunden. Die Gelenke wurden durch Dynamixel Motoren dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
+Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinander verbunden. Die Gelenke wurden durch Dynamixel-Servos dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
 
 % Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibende unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
 % \begin{align}
@@ -37,9 +36,9 @@ Der Funktionsumfang des Roboters beschränkte sich auf die Steuerung der Motoren
 
 \subsubsection{CAD-gestütztes Design und 3D-Druck}
 
-Die Bauteile und das Gehäuse des Roboters wurden mithilfe eines CAD-gestützten Entwicklungsprozesses mit \textit{Autodesk Fusion 360} \cite{fusion360} erstellt. Die digitale Modellierung ermöglichte eine präzise Gestaltung der Bauteile, die direkt überprüft werden konnten. Für den Austausch und die Weiterverarbeitung (insbesondere mit Herrn Prof. Dr. Ihme) wurden die Modelle als standardisierte STEP-Dateien exportiert.
+Die Bauteile und das Gehäuse des Roboters wurden mithilfe eines CAD-gestützten Entwicklungsprozesses mit \emph{Autodesk Fusion 360} \cite{fusion360} erstellt. Die digitale Modellierung ermöglichte eine präzise Gestaltung der Bauteile, die direkt überprüft werden konnten. Für den Austausch und die Weiterverarbeitung (insbesondere mit Herrn Prof. Dr. Ihme) wurden die Modelle als standardisierte STEP-Dateien exportiert.
 
-Der anschließende 3D-Druck der Komponenten erlaubte eine schnelle und kostengünstige Fertigung. Durch das additive Herstellungsverfahren wurde nur das tatsächlich benötigte Material eingesetzt, was sowohl Gewicht als auch Ressourcen sparte. Besonders vorteilhaft am Prozess ist zudem, dass keine komplexen Werkzeuge oder Maschinen notwendig sind – Anpassungen ließen sich direkt am Computer vornehmen und unkompliziert umsetzen.
+Der anschließende 3D-Druck der Komponenten erlaubte eine einfache, schnelle und kostengünstige Fertigung. Durch das additive Herstellungsverfahren wurde nur das tatsächlich benötigte Material eingesetzt, was sowohl Gewicht als auch Ressourcen sparte. Besonders vorteilhaft am Prozess ist zudem, dass keine komplexen Werkzeuge oder Maschinen notwendig sind. Für die Entwicklung wird lediglich ein Computer benötigt, wodurch es wesentlich unkomplizierter ist, Änderungen umzusetzen.
 
 Der kombinierte CAD- und 3D-Druckprozess unterstützt somit eine iterative und flexible Entwicklung, wie sie im Prototypenbau von mobilen Robotern besonders hilfreich ist.
 
@@ -49,11 +48,11 @@ Ziel der Weiterentwicklung des übernommenen einarmigen Krabbelroboters war es, 
 
 \textbf{Must-Have}
 \begin{itemize}
-  \item \textbf{Modularität (Basic):} Zentrale Komponenten, insbesondere der Akku, müssen einfach austauschbar und erweiterbar sein, z.\,B. durch Steck- oder Schraubverbindungen.
+  \item \textbf{Modularität (Basic):} Das Austauschen oder Erweitern zentraler Komponenten (insbesondere des Akkus) sollte erleichtert werden, etwa durch Steck- oder Schraubverbindungen.
   \item \textbf{Offenes Design:} Für Demonstrationszwecke müssen alle Komponenten sichtbar und gut zugänglich montiert sein, um einen schnellen Überblick über das System zu ermöglichen.
-  \item \textbf{Zentraler, tiefer Schwerpunkt:} Zur Erhöhung der Stabilität und besseren Kraftübertragung beim Antrieb muss ein möglichst zentraler und tiefer Schwerpunkt angestrebt.
+  \item \textbf{Verbesserter Schwerpunkt:} Damit das Bein möglichst wenig Last stemmen muss, sollte ein Schwerpunkt nah an der Radachse angestrebt werden.
   \item \textbf{Leichtbauweise:} Ein geringes Gewicht unterstützt die Energieeffizienz und erleichtert die Steuerung durch kleinere Antriebsmotoren.
-  \item \textbf{Mechanische Kompatibilität:} Es muss auf die Verwendung standardisierter Bauteile (z.\,B. M3/M4-Schrauben) geachtet werden, um einfache (De-)Montage und Erweiterbarkeit sicherzustellen.
+  \item \textbf{Mechanische Kompatibilität:} Es muss auf die Verwendung standardisierter Bauteile (z.\.B. M3/M4-Schrauben) geachtet werden, um einfache (De-)Montage und Erweiterbarkeit sicherzustellen.
 \end{itemize}
 
 \textbf{Nice-to-Have}
@@ -65,13 +64,13 @@ Ziel der Weiterentwicklung des übernommenen einarmigen Krabbelroboters war es, 
 
 \textbf{Optional}
 \begin{itemize}
-  \item \textbf{Autonomiefunktionen:} z.\,B. selbstständige Navigation zur Erweiterung des Funktionsumfangs.
+  \item \textbf{Autonomiefunktionen:} z.\.B. selbstständige Navigation zur Erweiterung des Funktionsumfangs.
   \item \textbf{Erweiterte Sensorik:} Zusätzliche Sensoren wie LiDAR als langfristige Option.
   \item \textbf{Symmetrisches Design:} Eine symmetrische Gestaltung kann die Bewegungsvorhersagbarkeit erhöhen und die Konstruktion vereinfachen.
-  \item \textbf{Diagnoseelemente:} LEDs oder Displays zur Anzeige von Systemzuständen (Spannung, Kommunikation, Fehler) neben der bestehenden, digitalen (Fehler-)Meldungen.
+  \item \textbf{Diagnoseelemente:} LEDs oder Displays zur Anzeige von Systemzuständen (wie etwa Spannung, Kommunikation, Fehlermeldungen) zur Ergänzung der bestehenden, digitalen Lösungen.
 \end{itemize}
 
-Diese Zielkriterien bildeten die Grundlage für die Auswahl der Bauteile (bzw. des Akkus) und das mechanische Design des weiterentwickelten Roboters.
+Diese Zielkriterien bildeten die Grundlage für die Auswahl der Bauteile einschließlich Akku und das mechanische Design des weiterentwickelten Roboters.
 
 \subsection{Software}
 
