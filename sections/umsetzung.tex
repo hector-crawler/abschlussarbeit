@@ -1,9 +1,11 @@
 \section{Realisierung des neuen Krabbelroboters}
 \label{sec:realisierung}
 
+Dieses Kapitel gibt einen kompakten Überblick über die praktische Umsetzung des neuen Krabbelroboters. Die wichtigsten Arbeitsschritte, Herausforderungen und Lösungswege von der Übernahme des Legacy-Projekts bis zur Entwicklung der neuen Hardware werden dargestellt.
+
 \subsection{Übernahme des Legacy-Projekts}
 
-Erstes Ziel war zu Projektbeginn, das Vorgängerprojekt zu reaktivieren und zum Laufen zu bekommen. Entsprechende Versuche scheiterten jedoch an unterschiedlichen Faktoren: Der Quellcode des Legacy-Programms war zwar öffentlich auf GitHub synchronisiert, allerdings ohne jegliche Anleitung bezüglich des Programmstarts, benötigter Software-Bibliotheken oder Veränderungen an der Installation des Linux-Betriebssystems. Nach mehreren Stunden des Debuggens war der beste Zustand, den wir erreichen konnten, das Programm mit ROS 1 in einem Docker-Image auszuführen. Da die isolierte Container-Umgebung allerdings scheinbar immer noch nicht den nötigen Startbedingungen entsprach, stürzte das Legacy-Programm weiterhin nach Start sofort ab. Nachdem die Arbeit eines ganzen Tages ein so enttäuschendes Ergebnis geliefert hatte, entschieden wir, das Programm von Grund auf neu zu schreiben und dabei den Fokus auf gute Dokumentation des Projekts und eine gute Developer Experience zu legen, um uns selbst sowie möglichen Nachfolgern des Projekt die Arbeit softwareseitig zu erleichtern.
+Erstes Ziel war zu Projektbeginn, das Vorgängerprojekt zu reaktivieren und zum Laufen zu bekommen. Entsprechende Versuche scheiterten jedoch an unterschiedlichen Faktoren: Der Quellcode des Legacy-Programms war zwar öffentlich auf GitHub synchronisiert, allerdings ohne jegliche Anleitung bezüglich des Programmstarts, benötigter Software-Bibliotheken oder Veränderungen an der Installation des Linux-\hspace{0pt}Betriebssystems. Nach mehreren Stunden des Debuggens war der beste Zustand, den wir erreichen konnten, das Programm mit ROS 1 in einem Docker-Image auszuführen. Da die isolierte Container-Umgebung allerdings scheinbar immer noch nicht den nötigen Startbedingungen entsprach, stürzte das Legacy-Programm weiterhin nach Start sofort ab. Nachdem die Arbeit eines ganzen Tages ein so enttäuschendes Ergebnis geliefert hatte, entschieden wir, das Programm von Grund auf neu zu schreiben und dabei den Fokus auf gute Dokumentation des Projekts und eine gute Developer Experience zu legen, um uns selbst sowie möglichen Nachfolgern des Projekt die Arbeit softwareseitig zu erleichtern.
 
 \subsection{Probleme mit dem Raspberry Pi}
 
@@ -24,7 +26,7 @@ Der erste 3D-Druck diente zur Kalibrierung der Maße und Überprüfung der Passg
 Einige Schraubenlöcher waren falsch positioniert, die Inkrementalgeber lagen zu nah beieinander, und die Höhe der oberen Griffe erwies sich als zu gering, 
 da die Akkumaße zunächst nur geschätzt worden waren.
 
-Da der alte Roboter bis dahin noch softwareseitig genutzt wurde, konnte der mechanische Umbau erst nach Abschluss der entsprechenden Software-Tests (z.B. Implementierung des Q-Learnings). 
+Da der alte Roboter bis dahin noch softwareseitig genutzt wurde, konnte der mechanische Umbau erst nach Abschluss der entsprechenden Software-Tests (z.\,B. Implementierung des Q-Learnings). 
 Anschließend wurde das CAD-Modell überarbeitet und an die gewonnenen Erkenntnisse angepasst.
 
 % Der zweite Druckvorgang verlief erfolgreich: Die Bauteile passten wie geplant, alle Komponenten konnten montiert werden. 
