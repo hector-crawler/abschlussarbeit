@@ -1,4 +1,4 @@
-pdflatex abschlussbericht.tex
+pdflatex -shell-escape abschlussbericht.tex
 bibtex abschlussbericht.aux
-pdflatex abschlussbericht.tex
-pdflatex abschlussbericht.tex
+pdflatex -shell-escape abschlussbericht.tex
+pdflatex -shell-escape abschlussbericht.tex

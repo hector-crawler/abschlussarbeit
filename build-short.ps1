@@ -1,1 +1,1 @@
-pdflatex abschlussbericht.tex
+pdflatex -shell-escape abschlussbericht.tex

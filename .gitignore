@@ -16,3 +16,4 @@ sections/*.aux
 exclude.py
 gliederung.txt
 _minted-*/
+_minted/
