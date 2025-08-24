@@ -191,7 +191,7 @@ Zu Anfang unseres Projekts hatten wir lange Zeit Schwierigkeiten, die neuere Ubu
 
 Zur Messung von Drehzahlunterschieden an den Rädern des Krabbelroboters werden zwei Inkrementalgeber eingesetzt. Die Inkrementalgeber des Legacy-Projektes, das Modell \textit{MEC22} der Firma PWB \cite{pwb_me16_datasheet_2011}, werden weiterverwendet. Die Sensoren ermöglichen eine zuverlässige Erfassung von Bewegungen und sind dabei kosteneffizient.
 
-Die gewählte Ausführung bietet eine Auflösung von 500 Zählimpulsen pro Umdrehung (Counts per Revolution, CPR). Damit lässt sich selbst eine sehr feine Wegauflösung realisieren. Bei einem Raddurchmesser von \SI{5}{\centi\m} entspricht ein Impuls etwa \SI{0,31}{\milli\m} Bewegung – ausreichend, um auch kleinste Bewegungen des Roboters zu erfassen.
+Die gewählte Ausführung bietet eine Auflösung von 500 Zählimpulsen pro Umdrehung (Counts per Revolution, CPR). Damit lässt sich selbst eine sehr feine Wegauflösung realisieren. Bei einem Raddurchmesser von \qty{5}{\centi\m} entspricht ein Impuls etwa \qty{0,31}{\milli\m} Bewegung – ausreichend, um auch kleinste Bewegungen des Roboters zu erfassen.
 
 Die Versorgung erfolgt direkt über den Raspberry Pi, der die notwendige Betriebsspannung zur Verfügung stellt. Die elektrische Verbindung wird über einen 5-poligen Molex-Stecker realisiert.
 
@@ -206,16 +206,16 @@ Für die Verbindung zwischen den Motoren und dem Steuerrechner kommt der \textit
 
 \subsubsection{Spannungsversorgung}
 
-Da der alte Akku, ein \textit{XCell LiPo Cracker CAR} \cite{xcell_akku} mit zwei Zellen, \SI{7.4}{\volt} und \SI{5400}{\milli\ampere\hour}, durch sein hohes Gewicht von \SI{310}{\gram} ca. \SI{25}{\percent} des Gesamtgewichts des Roboters ausmachte, wurde ein leichterer Akku gesucht.
+Da der alte Akku, ein \textit{XCell LiPo Cracker CAR} \cite{xcell_akku} mit zwei Zellen, \qty{7.4}{\volt} und \qty{5400}{\milli\ampere\hour}, durch sein hohes Gewicht von \qty{310}{\gram} ca. \qty{25}{\percent} des Gesamtgewichts des Roboters ausmachte, wurde ein leichterer Akku gesucht.
 
-Der neu ausgewählte \textit{Gens ace Modellbau-Akkupack (LiPo)} \cite{gens_ace_akku} ist mit seinen ebenfalls \SI{7.4}{\volt} Ausgangsspannung ähnlich aufgebaut, wiegt allerdings nur noch \SI{66}{\gram} und ist deutlich kompakter. Aufgrund des geplanten Einsatzes als Demonstrationsroboter ist auch die damit verbundene geringere Laufzeit kein Problem.
+Der neu ausgewählte \textit{Gens ace Modellbau-Akkupack (LiPo)} \cite{gens_ace_akku} ist mit seinen ebenfalls \qty{7.4}{\volt} Ausgangsspannung ähnlich aufgebaut, wiegt allerdings nur noch \qty{66}{\gram} und ist deutlich kompakter. Aufgrund des geplanten Einsatzes als Demonstrationsroboter ist auch die damit verbundene geringere Laufzeit kein Problem.
 
 \begin{align*}
-t_{\text{Betrieb, alt}} &= \frac{\SI{5400}{\milli\ampere\hour}}{\SI{1070}{\milli\ampere}} \approx \SI{5}{\hour} \\
-t_{\text{Betrieb, neu}} &= \frac{\SI{1500}{\milli\ampere\hour}}{\SI{1070}{\milli\ampere}} \approx \SI{1.4}{\hour}
+t_{\text{Betrieb, alt}} &= \frac{\qty{5400}{\milli\ampere\hour}}{\qty{1070}{\milli\ampere}} \approx \qty{5}{\hour} \\
+t_{\text{Betrieb, neu}} &= \frac{\qty{1500}{\milli\ampere\hour}}{\qty{1070}{\milli\ampere}} \approx \qty{1.4}{\hour}
 \end{align*}
 
-\SI{1070}{\milli\ampere} sind dabei der maximal gemessene Strom (bei der Bewegung der Motoren) und nicht der Normalzustand.
+\qty{1070}{\milli\ampere} sind dabei der maximal gemessene Strom (bei der Bewegung der Motoren) und nicht der Normalzustand.
 
 % \subsubsection{Integration und Inbetriebnahme der Hardware}
 
