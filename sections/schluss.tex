@@ -20,7 +20,7 @@ Im Vergleich zum alten Roboter stellt die neue Konstruktion eine deutliche Verbe
 
 Das äußere Erscheinungsbild wirkt funktional und aus unserer Sicht auch ansprechend, wobei dies natürlich subjektiv ist. Der Schwerpunkt des Roboters liegt tief, was sich positiv auf die Stabilität auswirken sollte. Systematische Tests konnten aber auch hier leider nicht durchgeführt werden. Eine Verkleinerung der Grundfläche wäre künftig sinnvoll, da aktuell relativ viel Material verbraucht wird, was auch die Druckzeit merklich erhöht. 
 
-Insgesamt konnte das Gewicht des Roboters durch die neue Konstruktion aber reduziert werden. Die genaue Reduktion liegt bei ca. \textbf{48{,}86\%} (von \textbf{1{,}32\,kg} auf \textbf{0{,}675\,kg}).
+Insgesamt konnte das Gewicht des Roboters durch die neue Konstruktion aber reduziert werden. Die genaue Reduktion liegt bei ca. \qty{48,86}{\percent} (von \qty{1,32}{\kilo\gram} auf \qty{0,675}{\kilo\gram}).
 
 Die optionalen Gestaltungskriterien wurden nicht umgesetzt. 
 
@@ -31,30 +31,29 @@ Die neue Programm wurde in der Laufzeit des Projekts auf denselben Funktionsstan
 \begin{itemize}
 	\item Das Webinterface wurde mit modernen Bibliotheken reimplementiert und im Zuge dessen visuell ansprechender gestaltet.
 	\item Der Entwicklungsprozess wurde wesentlich reibungsloser und angenehmer gestaltet. Zukünftige Entwicklung am Roboter sollte wesentlich schneller verlaufen können.
-	\item Der gesamte Entwicklungsprozess sowie die benötigte Entwicklungsumgebung sind gut dokumentiert und leicht zu verwalten. Dies wird zukünftigen Neukömmlingen zum Projekt den Projektanfang stark erleichtern.
+	\item Der gesamte Entwicklungsprozess sowie die benötigte Entwicklungsumgebung sind gut dokumentiert und leicht zu verwalten. Dies wird für zukünftige Projekte den Projektanfang stark erleichtern.
 	\item Das neue Programm wurde wesentlich modularer gestaltet, was künftige Änderungen und Additionen erleichtert.
 \end{itemize}
 
 Auch wenn der Projektstand zunächst im Vergleich zum Vorgängerprojekt nicht fortgeschritten zu sein scheint, wurde doch viel an der Software weiterentwickelt, und die Ergebnisse können sich durchaus zeigen lassen.
 
-Dennoch wäre gewisse Weiterentwicklung über das Vorgängerprojekt hinaus wünschenswert gewesen. Ideen zu Projektanfang wie verschiedene Algorithmen zur Steuerung des Roboters oder Aufzeichnung und Simulation von Bewegungen und Fortschritt wurden in der gegebenen Zeit nicht realisiert.
+Dennoch wäre Weiterentwicklung über das Vorgängerprojekt hinaus im Sinne einer tatsächlichen Fortbewegung wünschenswert gewesen. Ideen zu Projektanfang wie verschiedene Algorithmen zur Steuerung des Roboters oder Aufzeichnung und Simulation von Bewegungen und Fortschritt wurden in der gegebenen Zeit nicht realisiert.
 
 \subsection{Erkenntnisse und Deutung}
 
 Rückblickend wurde der Aufwand für die mechanische Umsetzung deutlich unterschätzt. Insbesondere die CAD-Konstruktion, das mehrfache Drucken, der Abbau des alten Roboters und der anschließende Aufbau des neuen Systems nahmen mehr Zeit in Anspruch als geplant. Das Zeitmanagement hätte entsprechend besser abgestimmt werden müssen, um Engpässe in der finalen Phase zu vermeiden.
 
-Triviale Hindernisse wie ein defekter Raspberry Pi oder das Starten des Legacy-Programms waren ebenfalls für Verzögerungen im Projektablauf verantwortlich. Diese Hindernisse wurden anfangs auch nicht bedacht, obwohl man mit Problemen solcher Art hätte rechnen können. Sie waren ebenfalls Grund, dass nicht alle vorgesehenen Ziele rechtzeitig erreicht werden konnten. In Zukunft sollte versucht werden, solche Probleme frühzeitig zu erkennen, schneller zu diagnostizieren und geschickter zu lösen, anstatt wertvolle Tage der gemeinsamen Arbeit daran zu verschwenden.
+Triviale Hindernisse wie ein defekter Raspberry Pi oder das Starten des Legacy-\hspace{0px}Programms waren ebenfalls für Verzögerungen im Projektablauf verantwortlich. Diese Hindernisse wurden anfangs auch nicht bedacht, obwohl man mit Problemen solcher Art hätte rechnen können. Sie waren ebenfalls Grund, dass nicht alle vorgesehenen Ziele rechtzeitig erreicht werden konnten. In Zukunft sollte versucht werden, solche Probleme frühzeitig zu erkennen, schneller zu diagnostizieren und geschickter zu lösen, anstatt wertvolle Tage der gemeinsamen Arbeit daran zu verschwenden.
 
 \subsection{Ausblick und offene Fragen}
 
+Zentrales Ziel weiterführender Projekte sollte das Erreichen einer tatsächlichen Fortbewegung des Roboters sein. Weitere konkrete Aspekte sind von Interesse:
+
+\pagebreak
 \textbf{Mechanischer Aufbau}
 
 Für eine zukünftige mechanische Weiterentwicklung wäre ein strukturierterer Innenaufbau sinnvoll, um Ordnung und Zugänglichkeit weiter zu erhöhen. Auch die angesprochenen fehlenden Tests fanden bisher nicht statt, obwohl diese helfen könnten, Schwachstellen besser zu erkennen. Darüber hinaus wäre eine umfassendere strukturelle Analyse des Roboters hilfreich, um mechanische Belastungen gezielter beurteilen und optimieren zu können.
 
 \textbf{Software-Algorithmen}
 
-Softwareseitig wäre der genauere Vergleich verschiedener Machine-Learning-Algorithmen interessant zu untersuchen, etwa zwischen dem existierenden Q-Learning-Algorithmus und einer Implementation eines neuronalen Netzwerks. Aufgrund der mangelnden Verfügbarkeit der Motoren des Roboters konnte der Vergleich in der Zeit unseres Projekts nicht durchgeführt werden.
-
-% \section{Zusammenfassung} % Laut den Vorlagen auf Moodel brauchen wir das nicht?
-
-% \textit{einfach komplett nochmal durch alles durchgehen, dann davon nochmal Fazit ziehen}
+Softwareseitig wäre es interessant, verschiedene Machine-Learning-Algorithmen genauer zu vergleichen. Es könnte etwa der existierende Q-Learning-Algorithmus und eine Implementation eines neuronalen Netzwerks verglichen werden. Aufgrund der mangelnden Verfügbarkeit der Motoren des Roboters konnte der Vergleich in der Zeit unseres Projekts nicht durchgeführt werden. \\ Fernere Möglichkeit zur Weiterentwicklung wäre etwa eine automatische Steuerung von Versuchsreihen nach konfigurierbaren Parametern. 
