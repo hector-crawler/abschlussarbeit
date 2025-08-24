@@ -7,18 +7,18 @@ Im folgenden Abschnitt wird der Zustand des Projekts bei der Übernahme beschrie
 
 \subsubsection{Analyse des Ausgangsmodells}
 
-Zu Beginn des Projekts wird der einarmige Krabbelroboter des Vorgängerprojekts in Bezug auf Software, Hardware und Funktionsumfang analysiert. Dazu wird besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}.
+Zu Beginn des Projekts wird der einbeinige Krabbelroboter des Vorgängerprojekts in Bezug auf Software, Hardware und Funktionsumfang analysiert. Dazu wird besonders die Dokumentation des Vorgängerprojekts angesehen \cite{vorgängerprojekt}.
 
 \textbf{Mechanische Analyse}
 
-Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Arm (Motor 1) und einer Hand bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinander verbunden. Die Gelenke wurden durch Dynamixel-Servos dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
+Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestand zum Zeitpunkt der Übernahme aus einer Basis (Chassis) mit einem Bein (Motor 1) und einer Fuß bzw. Greifer (Motor 2). Die drei Bauteile sind mit je einem Rotationsgelenk, also insgesamt zwei Gelenken, miteinander verbunden. Die Gelenke wurden durch Dynamixel-Servos dargestellt. Der Aufbau lässt sich also als Kinematische Kette darstellen.
 
 % Daher konnte die Anzahl $n$ an Freiheitsgraden (DoF) des Roboters mit der Formel von Grübler berechnet werden. Ein Freiheitsgrad ist dabei \glqq jede verbleibende unabhängige Bewegungsfreiheit eines Systems\grqq \ \cite{robotik_scriptum}.
 % \begin{align}
 %   n = m \cdot (N - 1 - J) + \sum_{i=1}^{J}f_i \noindent \\
 %   n = 6 \cdot (3 - 1 - 2) + \sum_{i=1}^{2}1 = 6 \cdot 0 + 2 = 2
 % \end{align}
-% Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starrkörpers ($m = 6$ im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starrkörper (hier 3: Chassis, Arm, Hand), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
+% Dabei ist \glqq $m$ die Anzahl der Freiheitsgrade jedes Starrkörpers ($m = 6$ im dreidimensionalen Raum)\grqq \ \cite{robotik_scriptum}, $N$ die Anzahl der Starrkörper (hier 3: Chassis, Bein, Fuß), $J$ die Anzahl der Gelenke (hier 2) und $f_i$ die Anzahl an Freiheitsgraden des Gelenks $i$. 
 
 % Des Weiteren wurde die Form des Konfigurationsraum des Roboters untersucht. Der Konfigurationsraum beschreibt alle möglichen Positionen und Orientierungen des Roboters im Raum. Mit der Form ist seine topologische Struktur gemeint, sprich wie die möglichen Konfigurationen (alle Konfigurationen zusammen ergeben den Konfigurationsraum) zusammenhängen. Da der Krabbel-Roboter zwei zyklische Rotationsgelenke hat, ergibt sich die Form eines zweidimensionalen Torus $(T^2 = S^1 \times S^1)$, wobei $S^1$ die Menge aller Punkte auf einem Kreis darstellt \cite{robotik_scriptum}. Abbildung \ref{fig:torus} zeigt dies visuell.
 % \begin{figure}[h]
@@ -28,11 +28,11 @@ Der Roboter wurde dabei einer mechanischen Strukturanalyse unterzogen. Er bestan
 %   \label{fig:torus}
 % \end{figure}
 
-% Das Robotersystem entspricht also einem (autonomen) mobilen Roboter mit 2 DoF und einem planaren 2R-Roboterarm. Daraus ließe sich eine Kinematische Modellierung bzw. Simulation erstellen, die allerdings nicht im Rahmen dieser Abschlussarbeit angefertigt wurde. 
+% Das Robotersystem entspricht also einem (autonomen) mobilen Roboter mit 2 DoF und einem planaren 2R-Roboterbein. Daraus ließe sich eine Kinematische Modellierung bzw. Simulation erstellen, die allerdings nicht im Rahmen dieser Abschlussarbeit angefertigt wurde. 
 
 \textbf{Funktionsumfang}
 
-Der Funktionsumfang des Roboters beschränkte sich auf die Steuerung der Motoren, um den Arm bzw. die Hand über eine graphische Benutzeroberfläche (GUI) zu bewegen.
+Der Funktionsumfang des Roboters beschränkte sich auf die Steuerung der Motoren, um den Bein bzw. die Fuß über eine graphische Benutzeroberfläche (GUI) zu bewegen.
 
 \subsubsection{CAD-gestütztes Design und 3D-Druck}
 
@@ -44,7 +44,7 @@ Der kombinierte CAD- und 3D-Druckprozess unterstützt somit eine iterative und f
 
 \subsubsection{Gestaltungsschwerpunkte}
 
-Ziel der Weiterentwicklung des übernommenen einarmigen Krabbelroboters war es, ein modular aufgebautes, leichtes und anschaulich gestaltetes System zu schaffen, das sowohl für Demonstrations- als auch Auswertungszwecke geeignet ist. Dabei wurden folgende Anforderungen von uns anfangs festgelegt:
+Ziel der Weiterentwicklung des übernommenen einbeinigen Krabbelroboters war es, ein modular aufgebautes, leichtes und anschaulich gestaltetes System zu schaffen, das sowohl für Demonstrations- als auch Auswertungszwecke geeignet ist. Dabei wurden folgende Anforderungen von uns anfangs festgelegt:
 
 \textbf{Must-Have}
 \begin{itemize}
@@ -197,7 +197,7 @@ Die Versorgung erfolgt direkt über den Raspberry Pi, der die notwendige Betrieb
 
 \textbf{Die Aktoren}
 
-Für die Bewegung des Arms wurden wie im ursprünglichen Projekt Servomotoren des Typs \textit{Dynamixel XL430-W250-T} von Robotis \cite{robotis_xl430} eingesetzt. Die Wiederverwendung dieser Motoren ermöglichte eine einfache Integration in das bestehende System und reduzierte den Entwicklungsaufwand. 
+Für die Bewegung des Beins wurden wie im ursprünglichen Projekt Servomotoren des Typs \textit{Dynamixel XL430-W250-T} von Robotis \cite{robotis_xl430} eingesetzt. Die Wiederverwendung dieser Motoren ermöglichte eine einfache Integration in das bestehende System und reduzierte den Entwicklungsaufwand. 
 
 Die Servos verfügen über ein gutes Verhältnis von Drehmoment (bis zu 1{,}5\,Nm) zu Energieverbrauch und erlauben eine präzise Positionssteuerung. Jeder Motor kann über eine eindeutige ID adressiert werden, was eine Kommunikation über ein gemeinsames Bus-System erlaubt. Zur Datenübertragung wird das TTL-Protokoll verwendet.
 
